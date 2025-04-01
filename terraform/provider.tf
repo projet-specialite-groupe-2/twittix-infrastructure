@@ -1,5 +1,5 @@
 provider "google" {
-  project     = "projet-sujetno2"
+  project     = "twittix"
   region      = "europe-west1"
-  zone        = "europe-west1-d"
+  zone        = "europe-west1-b"
 }
