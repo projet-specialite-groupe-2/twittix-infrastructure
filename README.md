@@ -55,4 +55,4 @@ http://localhost:8080/
 - Le réseau sera géré avec VPC, qui permet de créer un réseau virtuel privé et de gérer les sous-réseaux.
 
 ### Schéma de l'infrastructure GCP :
-<img src="images/twittix_Infra_GCP.png" alt="twittix-infra GCP" >
+<img src="images/twittix_Infra_GCP2.png" alt="twittix-infra GCP" >
