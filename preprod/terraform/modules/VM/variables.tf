@@ -49,10 +49,22 @@ variable "power_state" {
   default     = "running"
 }
 
-variable "template_netconfig" {
+variable "template_netconfig0" {
   description = "Network configuration for the template"
   type        = string
   default     = "ip=dhcp"
+}
+
+variable "template_netconfig1" {
+  description = "Network configuration for the template"
+  type        = string
+  default = null
+}
+
+variable "template_netconfig2" {
+  description = "Network configuration for the template"
+  type        = string
+  default = null
 }
 
 variable "template_user" {
@@ -84,7 +96,13 @@ variable "cloudinit_storage" {
     default     = "local-lvm"
 }
 
-variable "bridge_name" {
-    description = "Bridge name for the VM network"
-    type        = string
+variable "networks" {
+  description = "List of network interfaces for the VM"
+  type = list(object({
+    id        = number
+    bridge    = string
+    model     = optional(string, "virtio")
+    firewall  = optional(bool, false)
+    link_down = optional(bool, false)
+  }))
 }

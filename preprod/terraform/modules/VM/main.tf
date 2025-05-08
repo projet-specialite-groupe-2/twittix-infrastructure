@@ -11,7 +11,11 @@ resource "proxmox_vm_qemu" "vm" {
     scsihw = "virtio-scsi-single"
     vm_state = var.power_state
 
-    ipconfig0  = var.template_netconfig
+    # Vérifie que la variable ipconfig_0 est définie avant de l'utiliser
+    ipconfig0 = try(length(var.template_netconfig0) > 0 ? var.template_netconfig0 : null, null)
+    ipconfig1 = try(length(var.template_netconfig1) > 0 ? var.template_netconfig1 : null, null)
+    ipconfig2 = try(length(var.template_netconfig2) > 0 ? var.template_netconfig2 : null, null)
+
     skip_ipv6  = true
     ciuser =  var.template_user
 
@@ -41,11 +45,14 @@ resource "proxmox_vm_qemu" "vm" {
         }
     }
 
-    network {
-        id = 0
-        model = "virtio"
-        bridge = var.bridge_name
-        firewall = false
-        link_down = false
+    dynamic "network" {
+      for_each = var.networks
+      content {
+        id        = network.value.id
+        model     = lookup(network.value, "model", "virtio")
+        bridge    = network.value.bridge
+        firewall  = lookup(network.value, "firewall", false)
+        link_down = lookup(network.value, "link_down", false)
+      }
     }
 }
