@@ -1,0 +1,9 @@
+[work:children]
+test
+test-webservers
+
+[test-webservers]
+web ansible_ssh_host=192.168.1.20 ansible_ssh_port=22 ansible_ssh_user='root'
+
+[test]
+zawarudo ansible_ssh_host=10.4.6.238 ansible_ssh_port=22 ansible_ssh_user='root'

@@ -1,0 +1,581 @@
+2025-04-28 14:15:12,125 p=97927 u=blizzar n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option `result_format=yaml` in callback plugin 
+ansible.builtin.default from ansible-core 2.13 onwards. This feature will be removed from community.general in version 13.0.0. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2025-04-28 14:15:12,142 p=97927 u=blizzar n=ansible INFO| PLAY [test] ****************************************************************************************************************************************************
+2025-04-28 14:15:12,148 p=97927 u=blizzar n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************
+2025-04-28 14:15:13,619 p=97927 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host zawarudo is using the discovered Python interpreter at /usr/bin/python3.11, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+
+2025-04-28 14:15:13,619 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:15:13,622 p=97927 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Upgrade all packages] ************************************************************************************************************
+2025-04-28 14:15:14,617 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:15:14,619 p=97927 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Install required packages] *******************************************************************************************************
+2025-04-28 14:15:15,382 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=vim)
+2025-04-28 14:15:16,131 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=apt-transport-https)
+2025-04-28 14:15:16,876 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=ca-certificates)
+2025-04-28 14:15:17,637 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=curl)
+2025-04-28 14:15:18,383 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=gnupg2)
+2025-04-28 14:15:19,237 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=lsb-release)
+2025-04-28 14:15:20,030 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=bash-completion)
+2025-04-28 14:15:20,794 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=dnsutils)
+2025-04-28 14:15:21,550 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=net-tools)
+2025-04-28 14:15:22,339 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=git)
+2025-04-28 14:15:23,153 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=jq)
+2025-04-28 14:15:23,971 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=less)
+2025-04-28 14:15:24,769 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=lsof)
+2025-04-28 14:15:25,558 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=molly-guard)
+2025-04-28 14:15:26,337 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=nmap)
+2025-04-28 14:15:27,117 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=screen)
+2025-04-28 14:15:27,920 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=sudo)
+2025-04-28 14:15:28,698 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=ipcalc)
+2025-04-28 14:15:28,702 p=97927 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Remove unused packages] **********************************************************************************************************
+2025-04-28 14:15:29,674 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:15:29,679 p=97927 u=blizzar n=ansible INFO| TASK [../../roles/install-docker : Download Docker GPG key and add it to the keyring] **************************************************************************
+2025-04-28 14:15:30,191 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:15:30,193 p=97927 u=blizzar n=ansible INFO| TASK [../../roles/install-docker : Add Docker GPG key to apt keyring] ******************************************************************************************
+2025-04-28 14:15:31,295 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:15:31,298 p=97927 u=blizzar n=ansible INFO| TASK [../../roles/install-docker : Add specified repository into sources list] *********************************************************************************
+2025-04-28 14:15:31,773 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:15:31,775 p=97927 u=blizzar n=ansible INFO| TASK [../../roles/install-docker : Remove obsolete Docker packages] ********************************************************************************************
+2025-04-28 14:15:32,392 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker.io)
+2025-04-28 14:15:33,004 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker-doc)
+2025-04-28 14:15:33,613 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker-compose)
+2025-04-28 14:15:34,213 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=podman-docker)
+2025-04-28 14:15:34,812 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=containerd)
+2025-04-28 14:15:35,416 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=runc)
+2025-04-28 14:15:35,419 p=97927 u=blizzar n=ansible INFO| TASK [../../roles/install-docker : Update apt and Install Docker engine] ***************************************************************************************
+2025-04-28 14:15:36,974 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker-ce)
+2025-04-28 14:15:38,480 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker-ce-cli)
+2025-04-28 14:15:40,357 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=containerd.io)
+2025-04-28 14:15:41,857 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker-buildx-plugin)
+2025-04-28 14:15:43,362 p=97927 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker-compose-plugin)
+2025-04-28 14:15:43,367 p=97927 u=blizzar n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************
+2025-04-28 14:15:43,367 p=97927 u=blizzar n=ansible INFO| zawarudo                   : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-28 14:15:54,523 p=98583 u=blizzar n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option `result_format=yaml` in callback plugin 
+ansible.builtin.default from ansible-core 2.13 onwards. This feature will be removed from community.general in version 13.0.0. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2025-04-28 14:15:54,539 p=98583 u=blizzar n=ansible INFO| PLAY [test] ****************************************************************************************************************************************************
+2025-04-28 14:15:54,544 p=98583 u=blizzar n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************
+2025-04-28 14:15:55,734 p=98583 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host zawarudo is using the discovered Python interpreter at /usr/bin/python3.11, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+
+2025-04-28 14:15:55,734 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:15:55,736 p=98583 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Upgrade all packages] ************************************************************************************************************
+2025-04-28 14:15:56,759 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:15:56,762 p=98583 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Install required packages] *******************************************************************************************************
+2025-04-28 14:15:57,537 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=vim)
+2025-04-28 14:15:58,304 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=apt-transport-https)
+2025-04-28 14:15:59,079 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=ca-certificates)
+2025-04-28 14:15:59,860 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=curl)
+2025-04-28 14:16:00,651 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=gnupg2)
+2025-04-28 14:16:01,417 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=lsb-release)
+2025-04-28 14:16:02,195 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=bash-completion)
+2025-04-28 14:16:02,978 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=dnsutils)
+2025-04-28 14:16:03,747 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=net-tools)
+2025-04-28 14:16:04,509 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=git)
+2025-04-28 14:16:05,279 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=jq)
+2025-04-28 14:16:06,066 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=less)
+2025-04-28 14:16:06,832 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=lsof)
+2025-04-28 14:16:07,612 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=molly-guard)
+2025-04-28 14:16:08,381 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=nmap)
+2025-04-28 14:16:09,150 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=screen)
+2025-04-28 14:16:09,930 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=sudo)
+2025-04-28 14:16:10,701 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=ipcalc)
+2025-04-28 14:16:10,705 p=98583 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Remove unused packages] **********************************************************************************************************
+2025-04-28 14:16:11,644 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:16:11,648 p=98583 u=blizzar n=ansible INFO| TASK [../../roles/install-docker : Download Docker GPG key and add it to the keyring] **************************************************************************
+2025-04-28 14:16:12,166 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:16:12,168 p=98583 u=blizzar n=ansible INFO| TASK [../../roles/install-docker : Add Docker GPG key to apt keyring] ******************************************************************************************
+2025-04-28 14:16:13,237 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:16:13,240 p=98583 u=blizzar n=ansible INFO| TASK [../../roles/install-docker : Add specified repository into sources list] *********************************************************************************
+2025-04-28 14:16:13,707 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:16:13,710 p=98583 u=blizzar n=ansible INFO| TASK [../../roles/install-docker : Remove obsolete Docker packages] ********************************************************************************************
+2025-04-28 14:16:14,330 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker.io)
+2025-04-28 14:16:14,926 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker-doc)
+2025-04-28 14:16:15,537 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker-compose)
+2025-04-28 14:16:16,130 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=podman-docker)
+2025-04-28 14:16:16,720 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=containerd)
+2025-04-28 14:16:17,310 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=runc)
+2025-04-28 14:16:17,313 p=98583 u=blizzar n=ansible INFO| TASK [../../roles/install-docker : Update apt and Install Docker engine] ***************************************************************************************
+2025-04-28 14:16:18,839 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker-ce)
+2025-04-28 14:16:20,355 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker-ce-cli)
+2025-04-28 14:16:21,864 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=containerd.io)
+2025-04-28 14:16:23,379 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker-buildx-plugin)
+2025-04-28 14:16:24,909 p=98583 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=docker-compose-plugin)
+2025-04-28 14:16:24,913 p=98583 u=blizzar n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************
+2025-04-28 14:16:24,913 p=98583 u=blizzar n=ansible INFO| zawarudo                   : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-04-28 14:24:56,728 p=102639 u=blizzar n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option `result_format=yaml` in callback plugin 
+ansible.builtin.default from ansible-core 2.13 onwards. This feature will be removed from community.general in version 13.0.0. Deprecation warnings can be 
+disabled by setting deprecation_warnings=False in ansible.cfg.
+2025-04-28 14:24:56,743 p=102639 u=blizzar n=ansible INFO| PLAY [test] ****************************************************************************************************************************************************
+2025-04-28 14:24:56,749 p=102639 u=blizzar n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************
+2025-04-28 14:24:59,095 p=102639 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host zawarudo is using the discovered Python interpreter at /usr/bin/python3.11, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+
+2025-04-28 14:24:59,096 p=102639 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:24:59,098 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Upgrade all packages] ************************************************************************************************************
+2025-04-28 14:25:38,753 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo]
+2025-04-28 14:25:38,756 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Install required packages] *******************************************************************************************************
+2025-04-28 14:25:39,551 p=102639 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=vim)
+2025-04-28 14:25:41,456 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=apt-transport-https)
+2025-04-28 14:25:42,225 p=102639 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=ca-certificates)
+2025-04-28 14:25:45,767 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=curl)
+2025-04-28 14:25:51,772 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=gnupg2)
+2025-04-28 14:25:52,534 p=102639 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=lsb-release)
+2025-04-28 14:25:53,277 p=102639 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=bash-completion)
+2025-04-28 14:25:55,148 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=dnsutils)
+2025-04-28 14:25:58,093 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=net-tools)
+2025-04-28 14:26:01,956 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=git)
+2025-04-28 14:26:04,406 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=jq)
+2025-04-28 14:26:05,163 p=102639 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=less)
+2025-04-28 14:26:05,922 p=102639 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=lsof)
+2025-04-28 14:26:08,302 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=molly-guard)
+2025-04-28 14:26:13,660 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=nmap)
+2025-04-28 14:26:16,790 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=screen)
+2025-04-28 14:26:19,970 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=sudo)
+2025-04-28 14:26:22,277 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=ipcalc)
+2025-04-28 14:26:22,282 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Remove unused packages] **********************************************************************************************************
+2025-04-28 14:26:27,747 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo]
+2025-04-28 14:26:27,751 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Download the Sury PHP keyring] **************************************************************************************
+2025-04-28 14:26:28,299 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo]
+2025-04-28 14:26:28,301 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Install the Sury PHP keyring] ***************************************************************************************
+2025-04-28 14:26:30,012 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo]
+2025-04-28 14:26:30,015 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Add Sury PHP repository] ********************************************************************************************
+2025-04-28 14:26:30,388 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo]
+2025-04-28 14:26:30,390 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Install Apache and PHP packages] ************************************************************************************
+2025-04-28 14:26:41,131 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=apache2)
+2025-04-28 14:26:57,800 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=libapache2-mod-php)
+2025-04-28 14:27:00,450 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=php8.4)
+2025-04-28 14:27:01,964 p=102639 u=blizzar n=ansible INFO| ok: [zawarudo] => (item=php8.4-cli)
+2025-04-28 14:27:05,826 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=php8.4-mysql)
+2025-04-28 14:27:10,971 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=php8.4-xml)
+2025-04-28 14:27:13,967 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=php8.4-mbstring)
+2025-04-28 14:27:16,897 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=php8.4-curl)
+2025-04-28 14:27:19,842 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item=php8.4-bcmath)
+2025-04-28 14:27:19,854 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Copy PHP test file] *************************************************************************************************
+2025-04-28 14:27:20,598 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo]
+2025-04-28 14:27:20,601 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Remove default Apache index.html] ***********************************************************************************
+2025-04-28 14:27:20,965 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo]
+2025-04-28 14:27:20,967 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Add DirectoryIndex to Apache default configuration] *****************************************************************
+2025-04-28 14:27:21,303 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo]
+2025-04-28 14:27:21,307 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/apache-virtualhosts-setup : Create the virtual hosts root directory] *************************************************************************
+2025-04-28 14:27:21,640 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo]
+2025-04-28 14:27:21,643 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/apache-virtualhosts-setup : Create current virtual host document root] ***********************************************************************
+2025-04-28 14:27:21,958 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item={'server_name': 'example.internal', 'server_admin': 'moi'})
+2025-04-28 14:27:22,269 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item={'server_name': 'truc.internal', 'server_admin': 'moi'})
+2025-04-28 14:27:22,277 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/apache-virtualhosts-setup : Create the virtual host configuration files] *********************************************************************
+2025-04-28 14:27:22,910 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item={'server_name': 'example.internal', 'server_admin': 'moi'})
+2025-04-28 14:27:23,515 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item={'server_name': 'truc.internal', 'server_admin': 'moi'})
+2025-04-28 14:27:23,523 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/apache-virtualhosts-setup : Enable the virtual host configuration files] *********************************************************************
+2025-04-28 14:27:23,936 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item={'server_name': 'example.internal', 'server_admin': 'moi'})
+2025-04-28 14:27:24,287 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item={'server_name': 'truc.internal', 'server_admin': 'moi'})
+2025-04-28 14:27:24,291 p=102639 u=blizzar n=ansible INFO| TASK [../../roles/apache-virtualhosts-setup : Copy PHP test file] **********************************************************************************************
+2025-04-28 14:27:24,921 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item={'server_name': 'example.internal', 'server_admin': 'moi'})
+2025-04-28 14:27:25,562 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo] => (item={'server_name': 'truc.internal', 'server_admin': 'moi'})
+2025-04-28 14:27:25,569 p=102639 u=blizzar n=ansible INFO| RUNNING HANDLER [../../roles/apache-webserver-setup : reload apache2] ******************************************************************************************
+2025-04-28 14:27:26,320 p=102639 u=blizzar n=ansible INFO| changed: [zawarudo]
+2025-04-28 14:27:26,323 p=102639 u=blizzar n=ansible INFO| RUNNING HANDLER [../../roles/apache-webserver-setup : start apache2] *******************************************************************************************
+2025-04-28 14:27:26,822 p=102639 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:27:26,824 p=102639 u=blizzar n=ansible INFO| RUNNING HANDLER [../../roles/apache-webserver-setup : enable apache2] ******************************************************************************************
+2025-04-28 14:27:27,351 p=102639 u=blizzar n=ansible INFO| ok: [zawarudo]
+2025-04-28 14:27:27,352 p=102639 u=blizzar n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************
+2025-04-28 14:27:27,352 p=102639 u=blizzar n=ansible INFO| zawarudo                   : ok=19   changed=16   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 10:20:13,606 p=16709 u=blizzar n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option 
+`result_format=yaml` in callback plugin ansible.builtin.default from ansible-core 2.13 onwards. This feature will be 
+removed from community.general in version 13.0.0. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2025-05-02 10:20:13,632 p=16709 u=blizzar n=ansible INFO| PLAY [home] **********************************************************************************************************
+2025-05-02 10:20:13,642 p=16709 u=blizzar n=ansible INFO| TASK [Gathering Facts] ***********************************************************************************************
+2025-05-02 10:20:15,484 p=16709 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host docker is using the discovered Python interpreter at /usr/bin/python3.11, but
+future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-02 10:20:15,484 p=16709 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 10:20:16,407 p=16709 u=blizzar n=ansible INFO| fatal: [web]: UNREACHABLE! => changed=false 
+  msg: 'Failed to connect to the host via ssh: ssh: connect to host 192.168.1.20 port 22: No route to host'
+  unreachable: true
+2025-05-02 10:20:16,409 p=16709 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Upgrade all packages] ******************************************************************
+2025-05-02 10:20:52,944 p=16709 u=blizzar n=ansible INFO| changed: [docker]
+2025-05-02 10:20:52,946 p=16709 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Install required packages] *************************************************************
+2025-05-02 10:20:53,733 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=vim)
+2025-05-02 10:20:54,484 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=apt-transport-https)
+2025-05-02 10:20:55,232 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=ca-certificates)
+2025-05-02 10:20:56,005 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=curl)
+2025-05-02 10:20:56,768 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=gnupg2)
+2025-05-02 10:20:57,529 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=lsb-release)
+2025-05-02 10:20:58,297 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=bash-completion)
+2025-05-02 10:20:59,070 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=dnsutils)
+2025-05-02 10:20:59,837 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=net-tools)
+2025-05-02 10:21:00,591 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=git)
+2025-05-02 10:21:01,376 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=jq)
+2025-05-02 10:21:02,133 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=less)
+2025-05-02 10:21:02,923 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=lsof)
+2025-05-02 10:21:03,694 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=molly-guard)
+2025-05-02 10:21:04,482 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=nmap)
+2025-05-02 10:21:05,246 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=screen)
+2025-05-02 10:21:06,062 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=sudo)
+2025-05-02 10:21:06,832 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=ipcalc)
+2025-05-02 10:21:06,836 p=16709 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Remove unused packages] ****************************************************************
+2025-05-02 10:21:11,970 p=16709 u=blizzar n=ansible INFO| changed: [docker]
+2025-05-02 10:21:11,975 p=16709 u=blizzar n=ansible INFO| TASK [../../roles/ssh-setup : Set up SSH authorized keys] ************************************************************
+2025-05-02 10:21:12,392 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=blizzar.pub.key)
+2025-05-02 10:21:12,731 p=16709 u=blizzar n=ansible INFO| ok: [docker] => (item=work-blizzar.pub.key)
+2025-05-02 10:21:12,734 p=16709 u=blizzar n=ansible INFO| PLAY RECAP ***********************************************************************************************************
+2025-05-02 10:21:12,734 p=16709 u=blizzar n=ansible INFO| docker                     : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 10:21:12,734 p=16709 u=blizzar n=ansible INFO| web                        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 10:22:05,925 p=17779 u=blizzar n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option 
+`result_format=yaml` in callback plugin ansible.builtin.default from ansible-core 2.13 onwards. This feature will be 
+removed from community.general in version 13.0.0. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2025-05-02 10:22:05,945 p=17779 u=blizzar n=ansible INFO| PLAY [home] **********************************************************************************************************
+2025-05-02 10:22:05,950 p=17779 u=blizzar n=ansible INFO| TASK [Gathering Facts] ***********************************************************************************************
+2025-05-02 10:22:07,152 p=17779 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host docker is using the discovered Python interpreter at /usr/bin/python3.11, but
+future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-02 10:22:07,152 p=17779 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 10:22:07,416 p=17779 u=blizzar n=ansible INFO| fatal: [web]: UNREACHABLE! => changed=false 
+  msg: 'Failed to connect to the host via ssh: ssh: connect to host 192.168.1.20 port 22: No route to host'
+  unreachable: true
+2025-05-02 10:22:07,501 p=17779 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host debian-12 is using the discovered Python interpreter at /usr/bin/python3.11, but
+future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-02 10:22:07,501 p=17779 u=blizzar n=ansible INFO| ok: [debian-12]
+2025-05-02 10:22:07,503 p=17779 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Upgrade all packages] ******************************************************************
+2025-05-02 10:22:08,598 p=17779 u=blizzar n=ansible INFO| ok: [debian-12]
+2025-05-02 10:22:08,655 p=17779 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 10:22:08,658 p=17779 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Install required packages] *************************************************************
+2025-05-02 10:22:09,458 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=vim)
+2025-05-02 10:22:09,526 p=17779 u=blizzar n=ansible INFO| ok: [debian-12] => (item=vim)
+2025-05-02 10:22:10,303 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=apt-transport-https)
+2025-05-02 10:22:11,293 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=ca-certificates)
+2025-05-02 10:22:11,528 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=apt-transport-https)
+2025-05-02 10:22:12,211 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=curl)
+2025-05-02 10:22:12,330 p=17779 u=blizzar n=ansible INFO| ok: [debian-12] => (item=ca-certificates)
+2025-05-02 10:22:13,045 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=gnupg2)
+2025-05-02 10:22:13,858 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=lsb-release)
+2025-05-02 10:22:14,569 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=curl)
+2025-05-02 10:22:14,650 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=bash-completion)
+2025-05-02 10:22:15,444 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=dnsutils)
+2025-05-02 10:22:16,241 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=net-tools)
+2025-05-02 10:22:17,096 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=git)
+2025-05-02 10:22:17,899 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=jq)
+2025-05-02 10:22:18,724 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=less)
+2025-05-02 10:22:19,285 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=gnupg2)
+2025-05-02 10:22:19,548 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=lsof)
+2025-05-02 10:22:20,056 p=17779 u=blizzar n=ansible INFO| ok: [debian-12] => (item=lsb-release)
+2025-05-02 10:22:20,307 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=molly-guard)
+2025-05-02 10:22:20,879 p=17779 u=blizzar n=ansible INFO| ok: [debian-12] => (item=bash-completion)
+2025-05-02 10:22:21,099 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=nmap)
+2025-05-02 10:22:21,842 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=screen)
+2025-05-02 10:22:22,660 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=dnsutils)
+2025-05-02 10:22:22,669 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=sudo)
+2025-05-02 10:22:23,445 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=ipcalc)
+2025-05-02 10:22:24,957 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=net-tools)
+2025-05-02 10:22:28,358 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=git)
+2025-05-02 10:22:30,672 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=jq)
+2025-05-02 10:22:31,430 p=17779 u=blizzar n=ansible INFO| ok: [debian-12] => (item=less)
+2025-05-02 10:22:32,217 p=17779 u=blizzar n=ansible INFO| ok: [debian-12] => (item=lsof)
+2025-05-02 10:22:34,345 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=molly-guard)
+2025-05-02 10:22:38,224 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=nmap)
+2025-05-02 10:22:41,093 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=screen)
+2025-05-02 10:22:44,022 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=sudo)
+2025-05-02 10:22:46,243 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=ipcalc)
+2025-05-02 10:22:46,247 p=17779 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Remove unused packages] ****************************************************************
+2025-05-02 10:22:47,212 p=17779 u=blizzar n=ansible INFO| ok: [debian-12]
+2025-05-02 10:22:47,274 p=17779 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 10:22:47,281 p=17779 u=blizzar n=ansible INFO| TASK [../../roles/ssh-setup : Set up SSH authorized keys] ************************************************************
+2025-05-02 10:22:47,689 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=blizzar.pub.key)
+2025-05-02 10:22:47,694 p=17779 u=blizzar n=ansible INFO| changed: [debian-12] => (item=blizzar.pub.key)
+2025-05-02 10:22:48,027 p=17779 u=blizzar n=ansible INFO| ok: [docker] => (item=work-blizzar.pub.key)
+2025-05-02 10:22:48,034 p=17779 u=blizzar n=ansible INFO| ok: [debian-12] => (item=work-blizzar.pub.key)
+2025-05-02 10:22:48,039 p=17779 u=blizzar n=ansible INFO| PLAY RECAP ***********************************************************************************************************
+2025-05-02 10:22:48,039 p=17779 u=blizzar n=ansible INFO| debian-12                  : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 10:22:48,039 p=17779 u=blizzar n=ansible INFO| docker                     : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 10:22:48,039 p=17779 u=blizzar n=ansible INFO| web                        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 10:23:28,882 p=18857 u=blizzar n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option 
+`result_format=yaml` in callback plugin ansible.builtin.default from ansible-core 2.13 onwards. This feature will be 
+removed from community.general in version 13.0.0. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2025-05-02 10:23:28,901 p=18857 u=blizzar n=ansible INFO| PLAY [home] **********************************************************************************************************
+2025-05-02 10:23:28,907 p=18857 u=blizzar n=ansible INFO| TASK [Gathering Facts] ***********************************************************************************************
+2025-05-02 10:23:30,037 p=18857 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host debian-12 is using the discovered Python interpreter at /usr/bin/python3.11, but
+future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-02 10:23:30,037 p=18857 u=blizzar n=ansible INFO| ok: [debian-12]
+2025-05-02 10:23:30,122 p=18857 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host docker is using the discovered Python interpreter at /usr/bin/python3.11, but
+future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-02 10:23:30,122 p=18857 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 10:23:30,412 p=18857 u=blizzar n=ansible INFO| fatal: [web]: UNREACHABLE! => changed=false 
+  msg: 'Failed to connect to the host via ssh: ssh: connect to host 192.168.1.20 port 22: No route to host'
+  unreachable: true
+2025-05-02 10:23:30,414 p=18857 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Upgrade all packages] ******************************************************************
+2025-05-02 10:23:31,492 p=18857 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 10:23:31,493 p=18857 u=blizzar n=ansible INFO| ok: [debian-12]
+2025-05-02 10:23:31,496 p=18857 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Install required packages] *************************************************************
+2025-05-02 10:23:32,262 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=vim)
+2025-05-02 10:23:32,263 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=vim)
+2025-05-02 10:23:33,047 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=apt-transport-https)
+2025-05-02 10:23:33,050 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=apt-transport-https)
+2025-05-02 10:23:33,827 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=ca-certificates)
+2025-05-02 10:23:33,848 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=ca-certificates)
+2025-05-02 10:23:34,611 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=curl)
+2025-05-02 10:23:34,730 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=curl)
+2025-05-02 10:23:35,398 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=gnupg2)
+2025-05-02 10:23:35,560 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=gnupg2)
+2025-05-02 10:23:36,180 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=lsb-release)
+2025-05-02 10:23:36,355 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=lsb-release)
+2025-05-02 10:23:36,981 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=bash-completion)
+2025-05-02 10:23:37,145 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=bash-completion)
+2025-05-02 10:23:37,772 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=dnsutils)
+2025-05-02 10:23:37,920 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=dnsutils)
+2025-05-02 10:23:38,569 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=net-tools)
+2025-05-02 10:23:38,735 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=net-tools)
+2025-05-02 10:23:39,350 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=git)
+2025-05-02 10:23:39,513 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=git)
+2025-05-02 10:23:40,143 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=jq)
+2025-05-02 10:23:40,338 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=jq)
+2025-05-02 10:23:40,959 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=less)
+2025-05-02 10:23:41,172 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=less)
+2025-05-02 10:23:41,758 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=lsof)
+2025-05-02 10:23:41,950 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=lsof)
+2025-05-02 10:23:42,528 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=molly-guard)
+2025-05-02 10:23:42,746 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=molly-guard)
+2025-05-02 10:23:43,312 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=nmap)
+2025-05-02 10:23:43,551 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=nmap)
+2025-05-02 10:23:44,085 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=screen)
+2025-05-02 10:23:44,362 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=screen)
+2025-05-02 10:23:44,891 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=sudo)
+2025-05-02 10:23:45,144 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=sudo)
+2025-05-02 10:23:45,691 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=ipcalc)
+2025-05-02 10:23:45,963 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=ipcalc)
+2025-05-02 10:23:45,967 p=18857 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Remove unused packages] ****************************************************************
+2025-05-02 10:23:47,023 p=18857 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 10:23:47,023 p=18857 u=blizzar n=ansible INFO| ok: [debian-12]
+2025-05-02 10:23:47,029 p=18857 u=blizzar n=ansible INFO| TASK [../../roles/ssh-setup : Set up SSH authorized keys] ************************************************************
+2025-05-02 10:23:47,556 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=blizzar.pub.key)
+2025-05-02 10:23:47,557 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=blizzar.pub.key)
+2025-05-02 10:23:47,931 p=18857 u=blizzar n=ansible INFO| ok: [debian-12] => (item=work-blizzar.pub.key)
+2025-05-02 10:23:47,937 p=18857 u=blizzar n=ansible INFO| ok: [docker] => (item=work-blizzar.pub.key)
+2025-05-02 10:23:47,943 p=18857 u=blizzar n=ansible INFO| PLAY RECAP ***********************************************************************************************************
+2025-05-02 10:23:47,943 p=18857 u=blizzar n=ansible INFO| debian-12                  : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 10:23:47,943 p=18857 u=blizzar n=ansible INFO| docker                     : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 10:23:47,943 p=18857 u=blizzar n=ansible INFO| web                        : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 11:00:58,671 p=33391 u=blizzar n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2025-05-02 11:00:58,754 p=33391 u=blizzar n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option `result_format=yaml` in callback plugin ansible.builtin.default from ansible-core 2.13 onwards. This 
+feature will be removed from community.general in version 13.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2025-05-02 11:00:58,774 p=33391 u=blizzar n=ansible INFO| PLAY [home] ****************************************************************************************************************************************************************************************************************
+2025-05-02 11:00:58,784 p=33391 u=blizzar n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-02 11:01:00,405 p=33391 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host docker is using the discovered Python interpreter at /usr/bin/python3.11, but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-02 11:01:00,405 p=33391 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 11:01:00,483 p=33391 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host clone is using the discovered Python interpreter at /usr/bin/python3.11, but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-02 11:01:00,483 p=33391 u=blizzar n=ansible INFO| ok: [clone]
+2025-05-02 11:01:08,814 p=33391 u=blizzar n=ansible INFO| fatal: [debian-12]: UNREACHABLE! => changed=false 
+  msg: 'Failed to connect to the host via ssh: ssh: connect to host 192.168.1.26 port 22: Connection timed out'
+  unreachable: true
+2025-05-02 11:01:08,817 p=33391 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Upgrade all packages] ************************************************************************************************************************************************************************
+2025-05-02 11:01:10,022 p=33391 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 11:01:10,112 p=33391 u=blizzar n=ansible INFO| ok: [clone]
+2025-05-02 11:01:10,114 p=33391 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Install required packages] *******************************************************************************************************************************************************************
+2025-05-02 11:01:10,890 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=vim)
+2025-05-02 11:01:10,998 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=vim)
+2025-05-02 11:01:11,649 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=apt-transport-https)
+2025-05-02 11:01:11,801 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=apt-transport-https)
+2025-05-02 11:01:12,387 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=ca-certificates)
+2025-05-02 11:01:12,616 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=ca-certificates)
+2025-05-02 11:01:13,133 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=curl)
+2025-05-02 11:01:13,412 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=curl)
+2025-05-02 11:01:13,925 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=gnupg2)
+2025-05-02 11:01:14,213 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=gnupg2)
+2025-05-02 11:01:14,731 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=lsb-release)
+2025-05-02 11:01:15,080 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=lsb-release)
+2025-05-02 11:01:15,467 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=bash-completion)
+2025-05-02 11:01:15,949 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=bash-completion)
+2025-05-02 11:01:16,222 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=dnsutils)
+2025-05-02 11:01:16,814 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=dnsutils)
+2025-05-02 11:01:16,992 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=net-tools)
+2025-05-02 11:01:17,668 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=net-tools)
+2025-05-02 11:01:17,747 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=git)
+2025-05-02 11:01:18,482 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=git)
+2025-05-02 11:01:18,502 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=jq)
+2025-05-02 11:01:19,228 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=less)
+2025-05-02 11:01:19,284 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=jq)
+2025-05-02 11:01:19,954 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=lsof)
+2025-05-02 11:01:20,109 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=less)
+2025-05-02 11:01:20,709 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=molly-guard)
+2025-05-02 11:01:20,954 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=lsof)
+2025-05-02 11:01:21,450 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=nmap)
+2025-05-02 11:01:21,761 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=molly-guard)
+2025-05-02 11:01:22,191 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=screen)
+2025-05-02 11:01:22,590 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=nmap)
+2025-05-02 11:01:22,999 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=sudo)
+2025-05-02 11:01:23,421 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=screen)
+2025-05-02 11:01:23,763 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=ipcalc)
+2025-05-02 11:01:24,238 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=sudo)
+2025-05-02 11:01:25,029 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=ipcalc)
+2025-05-02 11:01:25,033 p=33391 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Remove unused packages] **********************************************************************************************************************************************************************
+2025-05-02 11:01:25,951 p=33391 u=blizzar n=ansible INFO| ok: [clone]
+2025-05-02 11:01:26,023 p=33391 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 11:01:26,029 p=33391 u=blizzar n=ansible INFO| TASK [../../roles/ssh-setup : Set up SSH authorized keys] ******************************************************************************************************************************************************************
+2025-05-02 11:01:26,435 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=blizzar.pub.key)
+2025-05-02 11:01:26,453 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=blizzar.pub.key)
+2025-05-02 11:01:26,757 p=33391 u=blizzar n=ansible INFO| ok: [clone] => (item=work-blizzar.pub.key)
+2025-05-02 11:01:26,797 p=33391 u=blizzar n=ansible INFO| ok: [docker] => (item=work-blizzar.pub.key)
+2025-05-02 11:01:26,804 p=33391 u=blizzar n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************************************************************
+2025-05-02 11:01:26,804 p=33391 u=blizzar n=ansible INFO| clone                      : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 11:01:26,804 p=33391 u=blizzar n=ansible INFO| debian-12                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 11:01:26,804 p=33391 u=blizzar n=ansible INFO| docker                     : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 11:01:34,500 p=34081 u=blizzar n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2025-05-02 11:01:34,543 p=34081 u=blizzar n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option `result_format=yaml` in callback plugin ansible.builtin.default from ansible-core 2.13 onwards. This 
+feature will be removed from community.general in version 13.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2025-05-02 11:01:34,557 p=34081 u=blizzar n=ansible INFO| PLAY [home] ****************************************************************************************************************************************************************************************************************
+2025-05-02 11:01:34,562 p=34081 u=blizzar n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-02 11:01:35,620 p=34081 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host clone is using the discovered Python interpreter at /usr/bin/python3.11, but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-02 11:01:35,620 p=34081 u=blizzar n=ansible INFO| ok: [clone]
+2025-05-02 11:01:35,780 p=34081 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host docker is using the discovered Python interpreter at /usr/bin/python3.11, but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-02 11:01:35,780 p=34081 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 11:01:35,782 p=34081 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Upgrade all packages] ************************************************************************************************************************************************************************
+2025-05-02 11:01:36,750 p=34081 u=blizzar n=ansible INFO| ok: [clone]
+2025-05-02 11:01:36,886 p=34081 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 11:01:36,889 p=34081 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Install required packages] *******************************************************************************************************************************************************************
+2025-05-02 11:01:37,630 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=vim)
+2025-05-02 11:01:37,779 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=vim)
+2025-05-02 11:01:38,396 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=apt-transport-https)
+2025-05-02 11:01:38,575 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=apt-transport-https)
+2025-05-02 11:01:39,162 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=ca-certificates)
+2025-05-02 11:01:39,403 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=ca-certificates)
+2025-05-02 11:01:39,917 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=curl)
+2025-05-02 11:01:40,243 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=curl)
+2025-05-02 11:01:40,685 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=gnupg2)
+2025-05-02 11:01:41,050 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=gnupg2)
+2025-05-02 11:01:41,435 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=lsb-release)
+2025-05-02 11:01:41,865 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=lsb-release)
+2025-05-02 11:01:42,172 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=bash-completion)
+2025-05-02 11:01:42,693 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=bash-completion)
+2025-05-02 11:01:42,970 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=dnsutils)
+2025-05-02 11:01:43,527 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=dnsutils)
+2025-05-02 11:01:43,730 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=net-tools)
+2025-05-02 11:01:44,393 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=net-tools)
+2025-05-02 11:01:44,512 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=git)
+2025-05-02 11:01:45,237 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=git)
+2025-05-02 11:01:45,242 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=jq)
+2025-05-02 11:01:45,957 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=less)
+2025-05-02 11:01:46,022 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=jq)
+2025-05-02 11:01:46,673 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=lsof)
+2025-05-02 11:01:46,825 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=less)
+2025-05-02 11:01:47,416 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=molly-guard)
+2025-05-02 11:01:47,692 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=lsof)
+2025-05-02 11:01:48,189 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=nmap)
+2025-05-02 11:01:48,537 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=molly-guard)
+2025-05-02 11:01:48,949 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=screen)
+2025-05-02 11:01:49,352 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=nmap)
+2025-05-02 11:01:49,680 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=sudo)
+2025-05-02 11:01:50,150 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=screen)
+2025-05-02 11:01:50,457 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=ipcalc)
+2025-05-02 11:01:50,947 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=sudo)
+2025-05-02 11:01:51,734 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=ipcalc)
+2025-05-02 11:01:51,738 p=34081 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Remove unused packages] **********************************************************************************************************************************************************************
+2025-05-02 11:01:52,705 p=34081 u=blizzar n=ansible INFO| ok: [clone]
+2025-05-02 11:01:52,735 p=34081 u=blizzar n=ansible INFO| ok: [docker]
+2025-05-02 11:01:52,741 p=34081 u=blizzar n=ansible INFO| TASK [../../roles/ssh-setup : Set up SSH authorized keys] ******************************************************************************************************************************************************************
+2025-05-02 11:01:53,151 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=blizzar.pub.key)
+2025-05-02 11:01:53,173 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=blizzar.pub.key)
+2025-05-02 11:01:53,475 p=34081 u=blizzar n=ansible INFO| ok: [clone] => (item=work-blizzar.pub.key)
+2025-05-02 11:01:53,515 p=34081 u=blizzar n=ansible INFO| ok: [docker] => (item=work-blizzar.pub.key)
+2025-05-02 11:01:53,521 p=34081 u=blizzar n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************************************************************
+2025-05-02 11:01:53,521 p=34081 u=blizzar n=ansible INFO| clone                      : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 11:01:53,521 p=34081 u=blizzar n=ansible INFO| docker                     : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-02 11:02:39,182 p=34937 u=blizzar n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2025-05-02 11:02:39,242 p=34937 u=blizzar n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option `result_format=yaml` in callback plugin ansible.builtin.default from ansible-core 2.13 onwards. This 
+feature will be removed from community.general in version 13.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2025-05-02 11:02:39,257 p=34937 u=blizzar n=ansible INFO| PLAY [webservers] **********************************************************************************************************************************************************************************************************
+2025-05-02 11:02:39,263 p=34937 u=blizzar n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-02 11:02:40,314 p=34937 u=blizzar n=ansible WARNING| [WARNING]: Platform linux on host clone is using the discovered Python interpreter at /usr/bin/python3.11, but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-02 11:02:40,314 p=34937 u=blizzar n=ansible INFO| ok: [clone]
+2025-05-02 11:02:40,316 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Upgrade all packages] ************************************************************************************************************************************************************************
+2025-05-02 11:02:41,304 p=34937 u=blizzar n=ansible INFO| ok: [clone]
+2025-05-02 11:02:41,306 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Install required packages] *******************************************************************************************************************************************************************
+2025-05-02 11:02:42,034 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=vim)
+2025-05-02 11:02:42,751 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=apt-transport-https)
+2025-05-02 11:02:43,477 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=ca-certificates)
+2025-05-02 11:02:44,184 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=curl)
+2025-05-02 11:02:44,889 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=gnupg2)
+2025-05-02 11:02:45,598 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=lsb-release)
+2025-05-02 11:02:46,324 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=bash-completion)
+2025-05-02 11:02:47,034 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=dnsutils)
+2025-05-02 11:02:47,748 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=net-tools)
+2025-05-02 11:02:48,455 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=git)
+2025-05-02 11:02:49,180 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=jq)
+2025-05-02 11:02:49,914 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=less)
+2025-05-02 11:02:50,657 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=lsof)
+2025-05-02 11:02:51,368 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=molly-guard)
+2025-05-02 11:02:52,083 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=nmap)
+2025-05-02 11:02:52,785 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=screen)
+2025-05-02 11:02:53,498 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=sudo)
+2025-05-02 11:02:54,237 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=ipcalc)
+2025-05-02 11:02:54,241 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/deb-setup : Remove unused packages] **********************************************************************************************************************************************************************
+2025-05-02 11:02:55,203 p=34937 u=blizzar n=ansible INFO| ok: [clone]
+2025-05-02 11:02:55,207 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Download the Sury PHP keyring] **************************************************************************************************************************************************
+2025-05-02 11:02:55,778 p=34937 u=blizzar n=ansible INFO| changed: [clone]
+2025-05-02 11:02:55,781 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Install the Sury PHP keyring] ***************************************************************************************************************************************************
+2025-05-02 11:02:57,685 p=34937 u=blizzar n=ansible INFO| changed: [clone]
+2025-05-02 11:02:57,687 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Add Sury PHP repository] ********************************************************************************************************************************************************
+2025-05-02 11:02:58,006 p=34937 u=blizzar n=ansible INFO| changed: [clone]
+2025-05-02 11:02:58,009 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Install Apache and PHP packages] ************************************************************************************************************************************************
+2025-05-02 11:03:08,807 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item=apache2)
+2025-05-02 11:03:22,188 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item=libapache2-mod-php)
+2025-05-02 11:03:24,702 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item=php8.4)
+2025-05-02 11:03:26,165 p=34937 u=blizzar n=ansible INFO| ok: [clone] => (item=php8.4-cli)
+2025-05-02 11:03:29,708 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item=php8.4-mysql)
+2025-05-02 11:03:34,356 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item=php8.4-xml)
+2025-05-02 11:03:37,232 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item=php8.4-mbstring)
+2025-05-02 11:03:40,048 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item=php8.4-curl)
+2025-05-02 11:03:42,855 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item=php8.4-bcmath)
+2025-05-02 11:03:42,865 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Copy PHP test file] *************************************************************************************************************************************************************
+2025-05-02 11:03:43,554 p=34937 u=blizzar n=ansible INFO| changed: [clone]
+2025-05-02 11:03:43,557 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Remove default Apache index.html] ***********************************************************************************************************************************************
+2025-05-02 11:03:43,892 p=34937 u=blizzar n=ansible INFO| changed: [clone]
+2025-05-02 11:03:43,896 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/apache-webserver-setup : Add DirectoryIndex to Apache default configuration] *****************************************************************************************************************************
+2025-05-02 11:03:44,184 p=34937 u=blizzar n=ansible INFO| changed: [clone]
+2025-05-02 11:03:44,188 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/apache-virtualhosts-setup : Create the virtual hosts root directory] *************************************************************************************************************************************
+2025-05-02 11:03:44,478 p=34937 u=blizzar n=ansible INFO| changed: [clone]
+2025-05-02 11:03:44,481 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/apache-virtualhosts-setup : Create current virtual host document root] ***********************************************************************************************************************************
+2025-05-02 11:03:44,762 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item={'server_name': 'example.internal', 'server_admin': 'moi'})
+2025-05-02 11:03:45,027 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item={'server_name': 'truc.internal', 'server_admin': 'moi'})
+2025-05-02 11:03:45,035 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/apache-virtualhosts-setup : Create the virtual host configuration files] *********************************************************************************************************************************
+2025-05-02 11:03:45,621 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item={'server_name': 'example.internal', 'server_admin': 'moi'})
+2025-05-02 11:03:46,177 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item={'server_name': 'truc.internal', 'server_admin': 'moi'})
+2025-05-02 11:03:46,186 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/apache-virtualhosts-setup : Enable the virtual host configuration files] *********************************************************************************************************************************
+2025-05-02 11:03:46,564 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item={'server_name': 'example.internal', 'server_admin': 'moi'})
+2025-05-02 11:03:46,869 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item={'server_name': 'truc.internal', 'server_admin': 'moi'})
+2025-05-02 11:03:46,873 p=34937 u=blizzar n=ansible INFO| TASK [../../roles/apache-virtualhosts-setup : Copy PHP test file] **********************************************************************************************************************************************************
+2025-05-02 11:03:47,456 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item={'server_name': 'example.internal', 'server_admin': 'moi'})
+2025-05-02 11:03:48,036 p=34937 u=blizzar n=ansible INFO| changed: [clone] => (item={'server_name': 'truc.internal', 'server_admin': 'moi'})
+2025-05-02 11:03:48,043 p=34937 u=blizzar n=ansible INFO| RUNNING HANDLER [../../roles/apache-webserver-setup : reload apache2] ******************************************************************************************************************************************************
+2025-05-02 11:03:48,728 p=34937 u=blizzar n=ansible INFO| changed: [clone]
+2025-05-02 11:03:48,731 p=34937 u=blizzar n=ansible INFO| RUNNING HANDLER [../../roles/apache-webserver-setup : start apache2] *******************************************************************************************************************************************************
+2025-05-02 11:03:49,166 p=34937 u=blizzar n=ansible INFO| ok: [clone]
+2025-05-02 11:03:49,169 p=34937 u=blizzar n=ansible INFO| RUNNING HANDLER [../../roles/apache-webserver-setup : enable apache2] ******************************************************************************************************************************************************
+2025-05-02 11:03:49,628 p=34937 u=blizzar n=ansible INFO| ok: [clone]
+2025-05-02 11:03:49,629 p=34937 u=blizzar n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************************************************************
+2025-05-02 11:03:49,629 p=34937 u=blizzar n=ansible INFO| clone                      : ok=19   changed=13   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

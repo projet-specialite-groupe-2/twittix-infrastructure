@@ -1,0 +1,6 @@
+---
+- hosts: home
+  become: true
+  roles:
+    - ../../roles/deb-setup
+    - ../../roles/ssh-setup
