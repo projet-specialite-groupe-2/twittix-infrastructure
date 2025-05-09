@@ -101,6 +101,7 @@ variable "networks" {
   type = list(object({
     id        = number
     bridge    = string
+    macaddr   = optional(string)
     model     = optional(string, "virtio")
     firewall  = optional(bool, false)
     link_down = optional(bool, false)

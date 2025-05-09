@@ -51,6 +51,7 @@ resource "proxmox_vm_qemu" "vm" {
         id        = network.value.id
         model     = lookup(network.value, "model", "virtio")
         bridge    = network.value.bridge
+        macaddr = network.value.macaddr
         firewall  = lookup(network.value, "firewall", false)
         link_down = lookup(network.value, "link_down", false)
       }
