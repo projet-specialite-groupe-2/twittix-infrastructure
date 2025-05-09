@@ -87,7 +87,7 @@ variable "vm_disk_storage" {
 variable "vm_disk_size" {
     description = "Size of the VM disk"
     type        = string
-    default     = "12G"
+    default     = "10G"
 }
 
 variable "cloudinit_storage" {
