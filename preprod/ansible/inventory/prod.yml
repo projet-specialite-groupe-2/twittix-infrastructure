@@ -2,12 +2,18 @@
 webservers
 dockers
 
+[dockers:children]
+docker-master
+docker-workers
+
 [skeleton]
 debian-12 ansible_ssh_host=192.168.1.26 ansible_ssh_port=22 ansible_ssh_user='root'
 
-[dockers]
-twittix-1 ansible_ssh_host=192.168.5.1 ansible_ssh_port=22 ansible_ssh_user='debian'
-twittix-2 ansible_ssh_host=192.168.5.2 ansible_ssh_port=22 ansible_ssh_user='debian'
+[docker-master]
+twittix-1 ansible_host=192.168.5.1 ansible_ssh_host=192.168.5.1 ansible_ssh_port=22 ansible_ssh_user='debian'
+
+[docker-workers]
+twittix-2 ansible_host=192.168.5.2 ansible_ssh_host=192.168.5.2 ansible_ssh_port=22 ansible_ssh_user='debian'
 
 [monitoring]
-monitoring-oob ansible_ssh_host=192.168.5.3 ansible_ssh_port=22 ansible_ssh_user='debian'
+monitoring-oob ansible_host=192.168.5.3 ansible_ssh_host=192.168.5.3 ansible_ssh_port=22 ansible_ssh_user='debian'
