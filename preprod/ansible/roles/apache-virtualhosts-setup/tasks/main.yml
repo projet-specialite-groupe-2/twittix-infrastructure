@@ -1,0 +1,50 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for apache-virtualhosts-setup
+
+# Set up the virtualhosts root directory
+- name: Create the virtual hosts root directory
+  ansible.builtin.file:
+    path: "{{ virtualhosts_root_dir | default('/var/www/virtualhosts') }}"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: 0755
+
+# Create current virtualhost document root
+- name: Create current virtual host document root
+  ansible.builtin.file:
+    path: "{{ virtualhosts_root_dir }}/{{ item.server_name }}"
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: 0755
+  with_items: "{{ virtualhosts }}"
+
+# Create the virtualhost configuration files
+- name: Create the virtual host configuration files
+  ansible.builtin.template:
+    src: "virtualhost.conf.j2"
+    dest: "/etc/apache2/sites-available/{{ item.server_name }}.conf"
+    owner: root
+    group: root
+    mode: 0644
+  with_items: "{{ virtualhosts }}"
+
+# Enable the virtual hosts
+- name: Enable the virtual host configuration files
+  ansible.builtin.command:
+    cmd: "a2ensite {{ item.server_name }}.conf"
+  with_items: "{{ virtualhosts }}"
+  register: enable_site
+  notify: reload apache2
+
+# Copy PHP index file in /var/www/html
+- name: Copy PHP test file
+  ansible.builtin.copy:
+    src: index.php
+    dest: "{{ virtualhosts_root_dir }}/{{ item.server_name }}/index.php"
+    owner: www-data
+    group: www-data
+    mode: '0644'
+  with_items: "{{ virtualhosts }}"

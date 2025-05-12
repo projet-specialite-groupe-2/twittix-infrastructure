@@ -1,0 +1,23 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for init swarm on master node
+
+- name: Init Swarm master
+  shell: docker swarm init --advertise-addr {{ ansible_host }}
+  register: swarm_init_result
+  failed_when: "'This node is already part of a swarm' not in swarm_init_result.stderr and swarm_init_result.rc != 0"
+  changed_when: "'Swarm initialized' in swarm_init_result.stdout"
+
+- name: Récupérer le token de join pour les workers
+  shell: docker swarm join-token -q worker
+  register: swarm_worker_token
+
+- name: Sauvegarder l'IP du master
+  set_fact:
+    swarm_master_ip: "{{ ansible_host }}"
+
+- name: Stocker le token pour tous les hôtes
+  set_fact:
+    swarm_worker_token: "{{ swarm_worker_token.stdout }}"
+  run_once: true
+  delegate_to: localhost

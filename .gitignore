@@ -1,0 +1,28 @@
+####################################################
+##       Git Ignore statements for Terraform      ##
+####################################################
+
+# Local .terraform directories
+**/.terraform/*
+
+#idea
+.idea/
+
+# Ignore variables files
+*.auto.tfvars
+
+# Ignore override files
+*.tfoverride
+
+# Ignore environment-specific files
+.envrc
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+####################################################
+##        Git Ignore statements for Ansible       ##
+####################################################
+
+.venv/

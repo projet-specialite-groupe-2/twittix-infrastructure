@@ -1,0 +1,23 @@
+#SPDX-License-Identifier: MIT-0
+---
+# handlers file for apache-setup
+
+- name: restart apache2
+  ansible.builtin.systemd:
+    name: apache2
+    state: restarted
+
+- name: reload apache2
+  ansible.builtin.systemd:
+    name: apache2
+    state: reloaded
+
+- name: start apache2
+  ansible.builtin.systemd:
+    name: apache2
+    state: started
+
+- name: enable apache2
+  ansible.builtin.systemd:
+    name: apache2
+    enabled: yes

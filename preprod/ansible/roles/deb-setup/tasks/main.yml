@@ -1,0 +1,20 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for deb-update
+
+- name: Upgrade all packages
+  ansible.builtin.apt:
+    update_cache: yes
+    cache_valid_time: 3600
+    upgrade: yes
+
+- name: Install required packages
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ packages_list }}"
+
+- name: Remove unused packages
+  ansible.builtin.apt:
+    autoremove: yes
+    purge: yes

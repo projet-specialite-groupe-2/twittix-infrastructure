@@ -1,0 +1,7 @@
+#SPDX-License-Identifier: MIT-0
+---
+# vars file for ssh-setup
+
+ssh_authorized_keys:
+  - blizzar.pub.key
+  - work-blizzar.pub.key

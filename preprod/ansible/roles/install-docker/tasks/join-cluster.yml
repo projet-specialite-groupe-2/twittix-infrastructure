@@ -1,0 +1,9 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for add workers in swarm cluster
+
+- name: Joindre le Swarm
+  shell: docker swarm join --token {{ hostvars['twittix-1'].swarm_worker_token }} {{ master_ip }}:2377
+  register: join_result
+  failed_when: "'already part of a swarm' not in join_result.stderr and join_result.rc != 0"
+  changed_when: "'This node joined a swarm' in join_result.stdout"

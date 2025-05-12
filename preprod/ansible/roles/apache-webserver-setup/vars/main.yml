@@ -1,0 +1,17 @@
+#SPDX-License-Identifier: MIT-0
+---
+# vars file for apache-setup
+
+url_keyring: https://packages.sury.org/debsuryorg-archive-keyring.deb
+php_sury_repo: https://packages.sury.org/php/
+
+apache_php_packages:
+  - apache2
+  - libapache2-mod-php
+  - php8.4 
+  - php8.4-cli
+  - php8.4-mysql 
+  - php8.4-xml 
+  - php8.4-mbstring 
+  - php8.4-curl 
+  - php8.4-bcmath
