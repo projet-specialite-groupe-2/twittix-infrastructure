@@ -1,31 +1,47 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+`install-docker` - Ce rôle permet d'installer et de configurer Docker sur une ou plusieurs machines cibles.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+- Les machines cibles doivent être basées sur un système d'exploitation compatible avec Docker (par exemple, Ubuntu, Debian, CentOS).
+- L'utilisateur Ansible doit avoir les privilèges sudo sur les machines cibles.
+- Une connexion SSH fonctionnelle doit être configurée.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Toutes les variables sont dans ```vars``` du rôle et n'ont pas besoin d'être modifiée.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+Pas de dépandances nécessaires
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+``` yaml
+- hosts: dockers
+  become: true
+  roles:
+    - ../../roles/deb-setup
+    - ../../roles/install-docker
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+- hosts: docker-master
+  become: true
+  tasks:
+    - import_tasks: ../../roles/install-docker/tasks/init-swarm.yml
+
+- hosts: docker-workers
+  become: true
+  vars:
+    master_ip: "{{ hostvars['twittix-1'].ansible_host }}"
+  tasks:
+    - import_tasks: ../../roles/install-docker/tasks/join-cluster.yml
+```
 
 License
 -------
@@ -35,4 +51,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Ce rôle a été créé par Aurélien Dupuis

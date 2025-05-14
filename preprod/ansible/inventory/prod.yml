@@ -1,7 +1,3 @@
-[home:children]
-webservers
-dockers
-
 [dockers:children]
 docker-master
 docker-workers
