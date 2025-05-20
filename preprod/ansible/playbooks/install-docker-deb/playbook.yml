@@ -3,7 +3,8 @@
   become: true
   roles:
     - ../../roles/deb-setup
-    - ../../roles/install-docker
+  tasks:
+    - import_tasks: ../../roles/install-docker/tasks/main-deb.yml
 
 - hosts: docker-master
   become: true
@@ -13,6 +14,6 @@
 - hosts: docker-workers
   become: true
   vars:
-    master_ip: "{{ hostvars['twittix-1'].ansible_host }}"
+    master_ip: "{{ hostvars['twittix-1'].ansible_ssh_host }}"
   tasks:
     - import_tasks: ../../roles/install-docker/tasks/join-cluster.yml

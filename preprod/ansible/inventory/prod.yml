@@ -1,15 +1,17 @@
-[dockers:children]
-docker-master
-docker-workers
+# Prod inventory file for Ansible
 
-[skeleton]
-debian-12 ansible_ssh_host=192.168.1.26 ansible_ssh_port=22 ansible_ssh_user='root'
+[rhel:children]
+rhel-dockers
 
-[docker-master]
-twittix-1 ansible_host=192.168.5.1 ansible_ssh_host=192.168.5.1 ansible_ssh_port=22 ansible_ssh_user='debian'
+[rhel-dockers:children]
+rhel-docker-master
+rhel-docker-workers
 
-[docker-workers]
-twittix-2 ansible_host=192.168.5.2 ansible_ssh_host=192.168.5.2 ansible_ssh_port=22 ansible_ssh_user='debian'
+[rhel-docker-master]
+twittix-1 ansible_host=192.168.5.1 ansible_ssh_host=192.168.5.1
+
+[rhel-docker-workers]
+twittix-2 ansible_host=192.168.5.2 ansible_ssh_host=192.168.5.2
 
 [monitoring]
-monitoring-oob ansible_host=192.168.5.3 ansible_ssh_host=192.168.5.3 ansible_ssh_port=22 ansible_ssh_user='debian'
+monitoring-oob ansible_host=192.168.5.3 ansible_ssh_host=192.168.5.3

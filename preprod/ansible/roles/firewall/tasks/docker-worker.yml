@@ -1,0 +1,42 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for docker workers firewall 
+
+- name: Set eth0 and eth1 to internal zone
+  ansible.posix.firewalld:
+    interface: "{{ item }}"
+    zone: internal
+    permanent: yes
+    immediate: yes
+    state: enabled
+  loop:
+    - eth0
+    - eth1
+  become: yes
+
+- name: Open port 22/tcp in firewalld (zone internal)
+  ansible.posix.firewalld:
+    port: 22/tcp
+    zone: internal
+    permanent: yes
+    state: enabled
+    immediate: yes
+  become: yes
+
+- name: Open port 7946/tcp in firewalld (zone internal)
+  ansible.posix.firewalld:
+    port: 7946/tcp
+    zone: internal
+    permanent: yes
+    state: enabled
+    immediate: yes
+  become: yes
+
+- name: Open port 4789/udp in firewalld (zone internal)
+  ansible.posix.firewalld:
+    port: 4789/udp
+    zone: internal
+    permanent: yes
+    state: enabled
+    immediate: yes
+  become: yes

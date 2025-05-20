@@ -10,7 +10,7 @@ packages_list:
   - docker-buildx-plugin
   - docker-compose-plugin
 
-obsolete_packages:
+deb_obsolete_packages:
   - docker.io
   - docker-doc
   - docker-compose

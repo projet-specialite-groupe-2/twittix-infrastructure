@@ -19,7 +19,6 @@ resource "proxmox_vm_qemu" "vm" {
 
     skip_ipv6  = true
     ciuser =  var.template_user
-    ciupgrade = true
 
     # Multiple SSH keys as a single string using Heredoc
     sshkeys = join("\n", var.ssh_keys)

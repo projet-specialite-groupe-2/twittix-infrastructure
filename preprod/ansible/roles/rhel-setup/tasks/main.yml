@@ -1,0 +1,30 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for rhel-setup
+
+- name: Upgrade all packages
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
+    update_cache: yes
+
+- name: Install epel-release
+  ansible.builtin.dnf:
+    name: epel-release
+    state: present
+
+- name: Install required packages
+  ansible.builtin.dnf:
+    name: "{{ packages_list }}"
+    state: present
+
+- name: Enable and start firewalld
+  ansible.builtin.systemd:
+    name: firewalld
+    state: started
+    enabled: true
+    
+- name: Remove unused packages
+  ansible.builtin.dnf:
+    autoremove: yes
+    

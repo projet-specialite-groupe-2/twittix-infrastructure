@@ -1,0 +1,24 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for install-docker-rhel
+
+- name: Add Docker CE repo 
+  ansible.builtin.get_url:
+    url: "{{ dnf_repository}}"
+    dest: /etc/yum.repos.d/docker-ce.repo
+    mode: '0644'
+  become: yes
+
+- name: Remove obsolete Docker packages
+  ansible.builtin.dnf:
+    name: "{{ rhel_obsolete_packages }}"
+    state: absent
+  when: rhel_obsolete_packages is defined
+  become: yes
+
+- name: Install Docker engine
+  ansible.builtin.dnf:
+    name: "{{ packages_list }}"
+    state: present
+    update_cache: yes
+  notify: start docker

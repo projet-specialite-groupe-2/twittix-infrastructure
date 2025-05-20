@@ -1,10 +1,10 @@
 #SPDX-License-Identifier: MIT-0
 ---
-# vars file for deb-setup
+# vars file for rhel-setup
 
 packages_list:
+  - dnf-plugins-core
   - vim
-  - apt-transport-https
   - ca-certificates
   - curl
   - gnupg2
@@ -16,8 +16,8 @@ packages_list:
   - jq
   - less 
   - lsof
-  - molly-guard
   - nmap
   - screen
   - sudo
   - ipcalc
+  - firewalld

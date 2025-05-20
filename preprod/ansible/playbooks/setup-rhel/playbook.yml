@@ -1,0 +1,12 @@
+---
+- hosts: rhel
+  become: true
+  collections:
+  - ansible.builtin
+  - ansible.posix
+  vars:
+    ansible_ssh_user: alma
+    ansible_ssh_port: 22
+  roles:
+    - ../../roles/rhel-setup
+    - ../../roles/ssh-setup

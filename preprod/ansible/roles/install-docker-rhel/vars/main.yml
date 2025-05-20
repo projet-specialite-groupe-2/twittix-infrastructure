@@ -1,0 +1,25 @@
+#SPDX-License-Identifier: MIT-0
+---
+# vars file for install-docker-rhel
+
+dnf_repository: 'https://download.docker.com/linux/rhel/docker-ce.repo'
+#rhel_gpgkey: 'https://download.docker.com/linux/rhel/gpg'
+
+packages_list:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+
+rhel_obsolete_packages:
+  - docker
+  - docker-client
+  - docker-client-latest
+  - docker-common
+  - docker-latest
+  - docker-latest-logrotate
+  - docker-logrotate
+  - docker-engine
+  - podman
+  - runc
