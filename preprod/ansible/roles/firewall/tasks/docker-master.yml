@@ -94,3 +94,4 @@
     state: enabled
     immediate: yes
   become: yes
+  notify: restart firewalld

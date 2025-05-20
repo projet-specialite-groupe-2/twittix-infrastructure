@@ -5,6 +5,8 @@
   vars:
     ansible_ssh_user: alma
     ansible_ssh_port: 22
+  roles:
+    - ../../roles/firewall
   tasks:
     - include_tasks: ../../roles/firewall/tasks/docker-master.yml
 
@@ -14,5 +16,7 @@
   vars:
     ansible_ssh_user: alma
     ansible_ssh_port: 22
+  roles:
+    - ../../roles/firewall
   tasks:
     - include_tasks: ../../roles/firewall/tasks/docker-worker.yml
