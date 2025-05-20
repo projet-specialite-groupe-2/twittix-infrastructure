@@ -19,6 +19,12 @@ variable "agent_enabled" {
   default     = 1
 }
 
+variable "cpu_type" {
+  description = "CPU proxmox type for the VM"
+  type        = string
+  default     = "x86-64-v3"
+}
+
 variable "socket_number" {
   description = "Number of sockets"
   type        = number

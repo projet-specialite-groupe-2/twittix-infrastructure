@@ -4,25 +4,28 @@ module "twittix-1" {
   vm_id = 5001
   target_node = "proxmox"
   agent_enabled = 1
+  cpu_type = "x86-64-v3"
   socket_number = 1
   core_number = 2
   ram_size = 2048
   vm_disk_storage = "local"
-  vm_disk_size = "10G"
+  vm_disk_size = "15G"
   cloudinit_storage = "local"
   power_state = "running"
-  template_name = "debian12-cloudinit"
-  template_user = "debian"
+  template_name = "alma9-cloudinit"
+  template_user = "alma"
   template_netconfig0 = "ip=51.254.57.62/32,gw=51.254.57.62"
   template_netconfig1 = "ip=192.168.1.1/23,gw=192.168.1.254"
   template_netconfig2 = "ip=192.168.5.1/23,gw=192.168.5.254"
   ssh_keys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCsHeb1jwR/CLX+qe1Szd3e7FyhhFjczZhZjy2HE12UuIeF8lRmZvunnylTik5hModPlIPwfp/CnFMaRO0U+QVTZc+lu5Zpq8xCsiA6o4FTxaKPDEDwy7BoAbQ6RQGI4OV7JwevBAwgO9OtAGm4mUo/DX+779huNxIsekg/XC6tRI3hVLh3AwHvIeREl49ESQLa0BANvjF9qdJkETg5CMrL+5811Rt7FmBZ6FBE9Xb+hVoIhMxK3rExb97p9xnCmQGUVLNy0hID1SdRoaD202cVixsxCIv+Gg8QQI0KqAkGA3yCZdzDVxq8VD6d1NPliub8FMTZMzgnd80RRlqraHU7ZiJTxQWvjcxI9aDf1+7S50NwhiU2Ulh+GAsmiA9GD56VjZLgGRyHM9Uoja6jN/k3/ucsT3XjXyWLG6Z4qo6hWtN7CQ8kUUrhGqMOvCx64suqM4jIaFM3Lpku4ZrGupFaALf33yAKtf5UT7khm8390qDzFHZntT90PuKGXMMiCdV1WLwJzLtIuXh8+hbs2sXo0RqU4BHe4E17BnWPfyoE/y3ykBTuCcpjxY3hzvdyHOIVcJFjIBPh2Gdjg3Re17x6Lw+/7z8W/9vJzmxnp3RyjQQs5myz9TNqJ7KpZFj2EF9xPYT2Rcej1NV30Q3W4TWy3oOj2LmAgGhbpiIX5uMFKw== root@proxmox",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCn3LengRRnNRjo7RaE5VteI3+JoOtwymaNnsWCq1UEqwFWqHWKFTM7SANXI+wT/XqEChk3BcP6PUnXykDUtWYUwtH6CuFsQIKXjoEcNCCSZas6JCerUKw3SgAJqcQp9qy44jXvSzV1P1TEv0sGdsqXyee7AV0phLAh9FypBnO8iJ+mW/pBrcNGMPv8ZUvIEcPgTWRZN+6kZnDFo2ydb3hD07vicwx96mSgR8hpXRp3mLYL6gWTY67AW4c6m9YIq8Kj3KT0rED1v1ize73jyfN3bcHYdcDBaM+GfJ13Qni59aNQAcuJg8tUf9lLp6qzqH9eNvkLNhAFMrPfzcjuruioCCOG50igD76iJ+wj5lcc4NQQZXUuUI7Z0OWVeR8bNyKFfJGp3KY3pK3D8fN8pdo/RWqg6j1L+T6PuDX6GYSFjIYbcuRwU1BBjy5wivZGeFdDfuRa0YzALWFDFnFj4VHmaaBG4iXgKALDpf3+ggCG8/6eY0nl9byolgqKuQUaEfk= raph@user",
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHNWOWlV9zGPKkTyB/qtPx7AaCEvfGSmNuWhmBoB8cdR adupuis@DESKTOP-V0M94BK",
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDGir2AhlmtdzreTmttxn8g3HhQUn3YRH0UtEoNMtqYy blizzar@nexus",
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIX5D2nBkr6jjacLw0Ol9E4JAeaPXDgEVezdmG8rV7x+ theo@xps-9315",
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO22wc71nm4xqpTcezmvL9GycZVbDmojjbrm8JujaTiR theo@tuf-b450"
   ]
+
   networks = [
     {
       id     = 0
@@ -46,19 +49,21 @@ module "twittix-2" {
   vm_id = 5002
   target_node = "proxmox"
   agent_enabled = 1
+  cpu_type = "x86-64-v3"
   socket_number = 1
   core_number = 2
   ram_size = 2048
   vm_disk_storage = "local"
-  vm_disk_size = "10G"
+  vm_disk_size = "15G"
   cloudinit_storage = "local"
   power_state = "running"
-  template_name = "debian12-cloudinit"
-  template_user = "debian"
+  template_name = "alma9-cloudinit"
+  template_user = "alma"
   template_netconfig0 = "ip=192.168.5.2/23,gw=192.168.5.254"
   template_netconfig1 = "ip=192.168.1.2/23,gw=192.168.1.254"
   ssh_keys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCsHeb1jwR/CLX+qe1Szd3e7FyhhFjczZhZjy2HE12UuIeF8lRmZvunnylTik5hModPlIPwfp/CnFMaRO0U+QVTZc+lu5Zpq8xCsiA6o4FTxaKPDEDwy7BoAbQ6RQGI4OV7JwevBAwgO9OtAGm4mUo/DX+779huNxIsekg/XC6tRI3hVLh3AwHvIeREl49ESQLa0BANvjF9qdJkETg5CMrL+5811Rt7FmBZ6FBE9Xb+hVoIhMxK3rExb97p9xnCmQGUVLNy0hID1SdRoaD202cVixsxCIv+Gg8QQI0KqAkGA3yCZdzDVxq8VD6d1NPliub8FMTZMzgnd80RRlqraHU7ZiJTxQWvjcxI9aDf1+7S50NwhiU2Ulh+GAsmiA9GD56VjZLgGRyHM9Uoja6jN/k3/ucsT3XjXyWLG6Z4qo6hWtN7CQ8kUUrhGqMOvCx64suqM4jIaFM3Lpku4ZrGupFaALf33yAKtf5UT7khm8390qDzFHZntT90PuKGXMMiCdV1WLwJzLtIuXh8+hbs2sXo0RqU4BHe4E17BnWPfyoE/y3ykBTuCcpjxY3hzvdyHOIVcJFjIBPh2Gdjg3Re17x6Lw+/7z8W/9vJzmxnp3RyjQQs5myz9TNqJ7KpZFj2EF9xPYT2Rcej1NV30Q3W4TWy3oOj2LmAgGhbpiIX5uMFKw== root@proxmox",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCn3LengRRnNRjo7RaE5VteI3+JoOtwymaNnsWCq1UEqwFWqHWKFTM7SANXI+wT/XqEChk3BcP6PUnXykDUtWYUwtH6CuFsQIKXjoEcNCCSZas6JCerUKw3SgAJqcQp9qy44jXvSzV1P1TEv0sGdsqXyee7AV0phLAh9FypBnO8iJ+mW/pBrcNGMPv8ZUvIEcPgTWRZN+6kZnDFo2ydb3hD07vicwx96mSgR8hpXRp3mLYL6gWTY67AW4c6m9YIq8Kj3KT0rED1v1ize73jyfN3bcHYdcDBaM+GfJ13Qni59aNQAcuJg8tUf9lLp6qzqH9eNvkLNhAFMrPfzcjuruioCCOG50igD76iJ+wj5lcc4NQQZXUuUI7Z0OWVeR8bNyKFfJGp3KY3pK3D8fN8pdo/RWqg6j1L+T6PuDX6GYSFjIYbcuRwU1BBjy5wivZGeFdDfuRa0YzALWFDFnFj4VHmaaBG4iXgKALDpf3+ggCG8/6eY0nl9byolgqKuQUaEfk= raph@user",
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHNWOWlV9zGPKkTyB/qtPx7AaCEvfGSmNuWhmBoB8cdR adupuis@DESKTOP-V0M94BK",
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDGir2AhlmtdzreTmttxn8g3HhQUn3YRH0UtEoNMtqYy blizzar@nexus",
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIX5D2nBkr6jjacLw0Ol9E4JAeaPXDgEVezdmG8rV7x+ theo@xps-9315",
@@ -83,19 +88,21 @@ module "monitoring" {
   vm_id = 5003
   target_node = "proxmox"
   agent_enabled = 1
+  cpu_type = "x86-64-v3"
   socket_number = 1
   core_number = 2
   ram_size = 2048
   vm_disk_storage = "local"
-  vm_disk_size = "10G"
+  vm_disk_size = "15G"
   cloudinit_storage = "local"
   power_state = "running"
-  template_name = "debian12-cloudinit"
-  template_user = "debian"
+  template_name = "alma9-cloudinit"
+  template_user = "alma"
   template_netconfig0 = "ip=192.168.5.3/23,gw=192.168.5.254"
   template_netconfig1 = "ip=192.168.1.3/23,gw=192.168.1.254"
   ssh_keys = [
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCsHeb1jwR/CLX+qe1Szd3e7FyhhFjczZhZjy2HE12UuIeF8lRmZvunnylTik5hModPlIPwfp/CnFMaRO0U+QVTZc+lu5Zpq8xCsiA6o4FTxaKPDEDwy7BoAbQ6RQGI4OV7JwevBAwgO9OtAGm4mUo/DX+779huNxIsekg/XC6tRI3hVLh3AwHvIeREl49ESQLa0BANvjF9qdJkETg5CMrL+5811Rt7FmBZ6FBE9Xb+hVoIhMxK3rExb97p9xnCmQGUVLNy0hID1SdRoaD202cVixsxCIv+Gg8QQI0KqAkGA3yCZdzDVxq8VD6d1NPliub8FMTZMzgnd80RRlqraHU7ZiJTxQWvjcxI9aDf1+7S50NwhiU2Ulh+GAsmiA9GD56VjZLgGRyHM9Uoja6jN/k3/ucsT3XjXyWLG6Z4qo6hWtN7CQ8kUUrhGqMOvCx64suqM4jIaFM3Lpku4ZrGupFaALf33yAKtf5UT7khm8390qDzFHZntT90PuKGXMMiCdV1WLwJzLtIuXh8+hbs2sXo0RqU4BHe4E17BnWPfyoE/y3ykBTuCcpjxY3hzvdyHOIVcJFjIBPh2Gdjg3Re17x6Lw+/7z8W/9vJzmxnp3RyjQQs5myz9TNqJ7KpZFj2EF9xPYT2Rcej1NV30Q3W4TWy3oOj2LmAgGhbpiIX5uMFKw== root@proxmox",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCn3LengRRnNRjo7RaE5VteI3+JoOtwymaNnsWCq1UEqwFWqHWKFTM7SANXI+wT/XqEChk3BcP6PUnXykDUtWYUwtH6CuFsQIKXjoEcNCCSZas6JCerUKw3SgAJqcQp9qy44jXvSzV1P1TEv0sGdsqXyee7AV0phLAh9FypBnO8iJ+mW/pBrcNGMPv8ZUvIEcPgTWRZN+6kZnDFo2ydb3hD07vicwx96mSgR8hpXRp3mLYL6gWTY67AW4c6m9YIq8Kj3KT0rED1v1ize73jyfN3bcHYdcDBaM+GfJ13Qni59aNQAcuJg8tUf9lLp6qzqH9eNvkLNhAFMrPfzcjuruioCCOG50igD76iJ+wj5lcc4NQQZXUuUI7Z0OWVeR8bNyKFfJGp3KY3pK3D8fN8pdo/RWqg6j1L+T6PuDX6GYSFjIYbcuRwU1BBjy5wivZGeFdDfuRa0YzALWFDFnFj4VHmaaBG4iXgKALDpf3+ggCG8/6eY0nl9byolgqKuQUaEfk= raph@user",
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHNWOWlV9zGPKkTyB/qtPx7AaCEvfGSmNuWhmBoB8cdR adupuis@DESKTOP-V0M94BK",
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDGir2AhlmtdzreTmttxn8g3HhQUn3YRH0UtEoNMtqYy blizzar@nexus",
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIX5D2nBkr6jjacLw0Ol9E4JAeaPXDgEVezdmG8rV7x+ theo@xps-9315",

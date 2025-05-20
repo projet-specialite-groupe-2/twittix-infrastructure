@@ -5,6 +5,7 @@ resource "proxmox_vm_qemu" "vm" {
     agent = var.agent_enabled
     sockets = var.socket_number
     cores = var.core_number
+    cpu_type = var.cpu_type
     memory = var.ram_size
     boot = "order=scsi0"
     clone = var.template_name
@@ -18,6 +19,7 @@ resource "proxmox_vm_qemu" "vm" {
 
     skip_ipv6  = true
     ciuser =  var.template_user
+    ciupgrade = true
 
     # Multiple SSH keys as a single string using Heredoc
     sshkeys = join("\n", var.ssh_keys)
