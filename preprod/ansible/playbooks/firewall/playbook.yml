@@ -1,6 +1,6 @@
 ---
 - name: Configure Firewall on Docker Swarm Master
-- hosts: rhel-docker-master
+  hosts: rhel-docker-master
   become: true
   vars:
     ansible_ssh_user: alma
@@ -9,7 +9,7 @@
     - include_tasks: ../../roles/firewall/tasks/docker-master.yml
 
 - name: Configure Firewall on Docker Swarm Workers
-- hosts: rhel-docker-workers
+  hosts: rhel-docker-workers
   become: true
   vars:
     ansible_ssh_user: alma
