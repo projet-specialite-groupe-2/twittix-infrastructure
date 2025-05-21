@@ -20,4 +20,3 @@ packages_list:
   - screen
   - sudo
   - ipcalc
-  - firewalld

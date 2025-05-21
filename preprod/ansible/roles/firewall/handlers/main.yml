@@ -2,6 +2,17 @@
 ---
 # handlers file for firewall
 
+- name: start firewalld
+  ansible.builtin.systemd:
+    name: firewalld
+    state: started
+    enabled: yes
+
+- name: reload firewalld
+  ansible.builtin.systemd:
+    name: firewalld
+    state: reloaded
+
 - name: restart firewalld
   ansible.builtin.systemd:
     name: firewalld

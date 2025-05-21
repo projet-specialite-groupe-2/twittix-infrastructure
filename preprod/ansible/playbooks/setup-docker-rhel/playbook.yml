@@ -1,0 +1,61 @@
+---
+- hosts: rhel-dockers
+  become: true
+  vars:
+    ansible_ssh_user: alma
+    ansible_ssh_port: 22
+  roles:
+    - ../../roles/rhel-setup
+    - ../../roles/install-docker-rhel
+
+- name : Init Swarm master
+  hosts: rhel-docker-master
+  become: true
+  vars:
+    ansible_ssh_user: alma
+    ansible_ssh_port: 22
+  tasks:
+    - include_tasks: ../../roles/install-docker-deb/tasks/init-swarm.yml
+
+- name: Join Swarm workers to cluster
+  hosts: rhel-docker-workers
+  become: true
+  vars:
+    ansible_ssh_user: alma
+    ansible_ssh_port: 22
+    master_ip: "{{ hostvars['twittix-1'].ansible_ssh_host }}"
+  tasks:
+    - include_tasks: ../../roles/install-docker-deb/tasks/join-cluster.yml
+
+- name: Install firewalld
+  hosts: rhel-dockers
+  become: true
+  vars:
+    ansible_ssh_user: alma
+    ansible_ssh_port: 22
+  tasks:
+    - import_role:
+        name: firewall
+        tasks_from: rhel-install-firewalld
+
+- name: Configure Firewall on Docker Swarm Master
+  hosts: rhel-docker-master
+  become: true
+  vars:
+    ansible_ssh_user: alma
+    ansible_ssh_port: 22
+  tasks:
+    - import_role:
+        name: firewall
+        tasks_from: docker-master
+
+- name: Configure Firewall on Docker Swarm Workers
+  hosts: rhel-docker-workers
+  become: true
+  vars:
+    ansible_ssh_user: alma
+    ansible_ssh_port: 22
+  tasks:
+    - import_role:
+        name: firewall
+        tasks_from: docker-worker

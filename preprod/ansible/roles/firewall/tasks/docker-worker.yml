@@ -39,5 +39,5 @@
     permanent: yes
     state: enabled
     immediate: yes
-  become: yes
   notify: restart firewalld
+  become: yes

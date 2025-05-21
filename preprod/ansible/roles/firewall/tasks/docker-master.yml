@@ -10,7 +10,7 @@
     immediate: yes
     state: enabled
   become: yes
-
+  
 - name: Set eth1 and eth2 to internal zone
   ansible.posix.firewalld:
     interface: "{{ item }}"
@@ -93,5 +93,5 @@
     permanent: yes
     state: enabled
     immediate: yes
-  become: yes
   notify: restart firewalld
+  become: yes
