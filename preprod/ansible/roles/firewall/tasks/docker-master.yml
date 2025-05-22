@@ -22,11 +22,17 @@
   become: yes
 
 - name: Set NetworkManager zone for eth0 (dmz)
-  command: nmcli connection modify "System eth0" connection.zone dmz
+  community.general.nmcli:
+    conn_name: "System eth0"
+    zone: dmz
+    state: present
   become: yes
 
 - name: Set NetworkManager zone for eth1 and eth2 (internal)
-  command: nmcli connection modify "System {{ item }}" connection.zone internal
+  community.general.nmcli:
+    conn_name: "System {{ item }}"
+    zone: internal
+    state: present
   loop:
     - eth1
     - eth2

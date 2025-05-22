@@ -44,6 +44,8 @@
   vars:
     ansible_ssh_user: alma
     ansible_ssh_port: 22
+  collections:
+    - community.general.nmcli
   tasks:
     - import_role:
         name: firewall

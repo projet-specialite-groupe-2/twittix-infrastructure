@@ -14,7 +14,10 @@
   become: yes
 
 - name: Set NetworkManager zone for eth0 and eth1 (internal)
-  command: nmcli connection modify "System {{ item }}" connection.zone internal
+  community.general.nmcli:
+    conn_name: "System {{ item }}"
+    zone: internal
+    state: present
   loop:
     - eth0
     - eth1
