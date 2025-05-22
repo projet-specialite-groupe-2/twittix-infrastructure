@@ -5,6 +5,7 @@
 packages_list:
   - dnf-plugins-core
   - vim
+  - wget
   - ca-certificates
   - curl
   - gnupg2

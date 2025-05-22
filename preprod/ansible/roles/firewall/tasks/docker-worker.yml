@@ -50,3 +50,12 @@
     immediate: yes
   notify: restart firewalld
   become: yes
+
+- name: Open port 6556/tcp in firewalld (zone internal)
+  ansible.posix.firewalld:
+    port: 6556/tcp
+    zone: internal
+    permanent: yes
+    state: enabled
+    immediate: yes
+  become: yes
