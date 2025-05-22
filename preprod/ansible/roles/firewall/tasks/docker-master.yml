@@ -7,7 +7,6 @@
     interface: eth0
     zone: dmz
     permanent: yes
-    immediate: yes
     state: enabled
   become: yes
   
@@ -16,8 +15,18 @@
     interface: "{{ item }}"
     zone: internal
     permanent: yes
-    immediate: yes
     state: enabled
+  loop:
+    - eth1
+    - eth2
+  become: yes
+
+- name: Set NetworkManager zone for eth0 (dmz)
+  command: nmcli connection modify "System eth0" connection.zone dmz
+  become: yes
+
+- name: Set NetworkManager zone for eth1 and eth2 (internal)
+  command: nmcli connection modify "System {{ item }}" connection.zone internal
   loop:
     - eth1
     - eth2
@@ -62,6 +71,15 @@
 - name: Open port 8000/tcp in firewalld (zone dmz)
   ansible.posix.firewalld:
     port: 8000/tcp
+    zone: dmz
+    permanent: yes
+    state: enabled
+    immediate: yes
+  become: yes
+
+- name: Open port 5173/tcp in firewalld (zone dmz)
+  ansible.posix.firewalld:
+    port: 5173/tcp
     zone: dmz
     permanent: yes
     state: enabled

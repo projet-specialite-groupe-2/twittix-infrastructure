@@ -7,8 +7,14 @@
     interface: "{{ item }}"
     zone: internal
     permanent: yes
-    immediate: yes
     state: enabled
+  loop:
+    - eth0
+    - eth1
+  become: yes
+
+- name: Set NetworkManager zone for eth0 and eth1 (internal)
+  command: nmcli connection modify "System {{ item }}" connection.zone internal
   loop:
     - eth0
     - eth1
