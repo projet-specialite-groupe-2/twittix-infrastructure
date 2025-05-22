@@ -7,7 +7,7 @@ module "twittix-1" {
   cpu_type = "x86-64-v3"
   socket_number = 1
   core_number = 2
-  ram_size = 2048
+  ram_size = 4096
   vm_disk_storage = "local"
   vm_disk_size = "15G"
   cloudinit_storage = "local"
@@ -52,7 +52,7 @@ module "twittix-2" {
   cpu_type = "x86-64-v3"
   socket_number = 1
   core_number = 2
-  ram_size = 2048
+  ram_size = 4096
   vm_disk_storage = "local"
   vm_disk_size = "15G"
   cloudinit_storage = "local"
@@ -90,10 +90,10 @@ module "monitoring" {
   agent_enabled = 1
   cpu_type = "x86-64-v3"
   socket_number = 1
-  core_number = 2
-  ram_size = 2048
+  core_number = 4
+  ram_size = 4096
   vm_disk_storage = "local"
-  vm_disk_size = "15G"
+  vm_disk_size = "20G"
   cloudinit_storage = "local"
   power_state = "running"
   template_name = "alma9-cloudinit"

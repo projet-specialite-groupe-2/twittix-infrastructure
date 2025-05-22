@@ -650,3 +650,403 @@ https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_disc
 2025-05-22 09:22:01,537 p=543755 u=root n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************************************************************
 2025-05-22 09:22:01,537 p=543755 u=root n=ansible INFO| twittix-1                  : ok=30   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-05-22 09:22:01,538 p=543755 u=root n=ansible INFO| twittix-2                  : ok=19   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-22 10:31:51,072 p=554689 u=root n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2025-05-22 10:31:51,162 p=554689 u=root n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option `result_format=yaml` in callback plugin ansible.builtin.default from ansible-core 2.13 onwards. This 
+feature will be removed from community.general in version 13.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2025-05-22 10:31:51,172 p=554689 u=root n=ansible INFO| PLAY [rhel-dockers] ********************************************************************************************************************************************************************************************************
+2025-05-22 10:31:51,178 p=554689 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 10:31:52,568 p=554689 u=root n=ansible WARNING| [WARNING]: Platform linux on host twittix-2 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-22 10:31:52,568 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:31:52,582 p=554689 u=root n=ansible WARNING| [WARNING]: Platform linux on host twittix-1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-22 10:31:52,582 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:31:52,585 p=554689 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Upgrade all packages] ***********************************************************************************************************************************************************************
+2025-05-22 10:31:55,744 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:31:55,972 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:31:55,975 p=554689 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Install epel-release] ***********************************************************************************************************************************************************************
+2025-05-22 10:31:56,989 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:31:56,989 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:31:56,993 p=554689 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Install required packages] ******************************************************************************************************************************************************************
+2025-05-22 10:31:57,974 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:31:57,999 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:31:58,004 p=554689 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Remove unused packages] *********************************************************************************************************************************************************************
+2025-05-22 10:31:58,988 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:31:58,997 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:31:59,007 p=554689 u=root n=ansible INFO| TASK [../../roles/install-docker-rhel : Add Docker CE repo] ****************************************************************************************************************************************************************
+2025-05-22 10:31:59,503 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:31:59,503 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:31:59,507 p=554689 u=root n=ansible INFO| TASK [../../roles/install-docker-rhel : Remove obsolete Docker packages] ***************************************************************************************************************************************************
+2025-05-22 10:32:00,486 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:00,506 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:32:00,510 p=554689 u=root n=ansible INFO| TASK [../../roles/install-docker-rhel : Install Docker engine] *************************************************************************************************************************************************************
+2025-05-22 10:32:03,038 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:32:03,694 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:03,702 p=554689 u=root n=ansible INFO| PLAY [Init Swarm master] ***************************************************************************************************************************************************************************************************
+2025-05-22 10:32:03,706 p=554689 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 10:32:04,448 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:04,452 p=554689 u=root n=ansible INFO| TASK [include_tasks] *******************************************************************************************************************************************************************************************************
+2025-05-22 10:32:04,464 p=554689 u=root n=ansible INFO| included: /opt/twittix-infrastructure/preprod/ansible/roles/install-docker-deb/tasks/init-swarm.yml for twittix-1
+2025-05-22 10:32:04,469 p=554689 u=root n=ansible INFO| TASK [Init Swarm master] ***************************************************************************************************************************************************************************************************
+2025-05-22 10:32:04,824 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:04,828 p=554689 u=root n=ansible INFO| TASK [Récupérer le token de join pour les workers] *************************************************************************************************************************************************************************
+2025-05-22 10:32:05,138 p=554689 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 10:32:05,143 p=554689 u=root n=ansible INFO| TASK [Sauvegarder l'IP du master] ******************************************************************************************************************************************************************************************
+2025-05-22 10:32:05,154 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:05,157 p=554689 u=root n=ansible INFO| TASK [Stocker le token pour tous les hôtes] ********************************************************************************************************************************************************************************
+2025-05-22 10:32:05,168 p=554689 u=root n=ansible INFO| ok: [twittix-1 -> localhost]
+2025-05-22 10:32:05,170 p=554689 u=root n=ansible INFO| PLAY [Join Swarm workers to cluster] ***************************************************************************************************************************************************************************************
+2025-05-22 10:32:05,174 p=554689 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 10:32:05,913 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:32:05,916 p=554689 u=root n=ansible INFO| TASK [include_tasks] *******************************************************************************************************************************************************************************************************
+2025-05-22 10:32:05,927 p=554689 u=root n=ansible INFO| included: /opt/twittix-infrastructure/preprod/ansible/roles/install-docker-deb/tasks/join-cluster.yml for twittix-2
+2025-05-22 10:32:05,930 p=554689 u=root n=ansible INFO| TASK [Joindre le Swarm] ****************************************************************************************************************************************************************************************************
+2025-05-22 10:32:06,238 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:32:06,240 p=554689 u=root n=ansible INFO| PLAY [Install firewalld] ***************************************************************************************************************************************************************************************************
+2025-05-22 10:32:06,244 p=554689 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 10:32:07,057 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:07,058 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:32:07,062 p=554689 u=root n=ansible INFO| TASK [firewall : Install firewalld] ****************************************************************************************************************************************************************************************
+2025-05-22 10:32:08,057 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:08,071 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:32:08,079 p=554689 u=root n=ansible INFO| PLAY [Configure Firewall on Docker Swarm Master] ***************************************************************************************************************************************************************************
+2025-05-22 10:32:08,084 p=554689 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 10:32:08,855 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:08,858 p=554689 u=root n=ansible INFO| TASK [firewall : Set interface eth0 to dmz zone] ***************************************************************************************************************************************************************************
+2025-05-22 10:32:09,352 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:09,356 p=554689 u=root n=ansible INFO| TASK [firewall : Set eth1 and eth2 to internal zone] ***********************************************************************************************************************************************************************
+2025-05-22 10:32:09,754 p=554689 u=root n=ansible INFO| ok: [twittix-1] => (item=eth1)
+2025-05-22 10:32:10,153 p=554689 u=root n=ansible INFO| ok: [twittix-1] => (item=eth2)
+2025-05-22 10:32:10,160 p=554689 u=root n=ansible INFO| TASK [firewall : Set NetworkManager zone for eth0 (dmz)] *******************************************************************************************************************************************************************
+2025-05-22 10:32:10,623 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:10,627 p=554689 u=root n=ansible INFO| TASK [firewall : Set NetworkManager zone for eth1 and eth2 (internal)] *****************************************************************************************************************************************************
+2025-05-22 10:32:11,004 p=554689 u=root n=ansible INFO| ok: [twittix-1] => (item=eth1)
+2025-05-22 10:32:11,370 p=554689 u=root n=ansible INFO| ok: [twittix-1] => (item=eth2)
+2025-05-22 10:32:11,375 p=554689 u=root n=ansible INFO| TASK [firewall : Open port 22/tcp in firewalld (zone dmz)] *****************************************************************************************************************************************************************
+2025-05-22 10:32:11,773 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:11,777 p=554689 u=root n=ansible INFO| TASK [firewall : Open port 80/tcp in firewalld (zone dmz)] *****************************************************************************************************************************************************************
+2025-05-22 10:32:12,173 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:12,177 p=554689 u=root n=ansible INFO| TASK [firewall : Open port 443/tcp in firewalld (zone dmz)] ****************************************************************************************************************************************************************
+2025-05-22 10:32:12,581 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:12,585 p=554689 u=root n=ansible INFO| TASK [firewall : Open port 8080/tcp in firewalld (zone dmz)] ***************************************************************************************************************************************************************
+2025-05-22 10:32:12,971 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:12,975 p=554689 u=root n=ansible INFO| TASK [firewall : Open port 8000/tcp in firewalld (zone dmz)] ***************************************************************************************************************************************************************
+2025-05-22 10:32:13,368 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:13,372 p=554689 u=root n=ansible INFO| TASK [firewall : Open port 5173/tcp in firewalld (zone dmz)] ***************************************************************************************************************************************************************
+2025-05-22 10:32:13,779 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:13,783 p=554689 u=root n=ansible INFO| TASK [firewall : Open port 2377/tcp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 10:32:14,183 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:14,187 p=554689 u=root n=ansible INFO| TASK [firewall : Open port 7946/tcp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 10:32:14,587 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:14,591 p=554689 u=root n=ansible INFO| TASK [firewall : Open port 4789/udp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 10:32:15,003 p=554689 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 10:32:15,008 p=554689 u=root n=ansible INFO| PLAY [Configure Firewall on Docker Swarm Workers] **************************************************************************************************************************************************************************
+2025-05-22 10:32:15,015 p=554689 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 10:32:15,762 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:32:15,765 p=554689 u=root n=ansible INFO| TASK [firewall : Set eth0 and eth1 to internal zone] ***********************************************************************************************************************************************************************
+2025-05-22 10:32:16,171 p=554689 u=root n=ansible INFO| ok: [twittix-2] => (item=eth0)
+2025-05-22 10:32:16,558 p=554689 u=root n=ansible INFO| ok: [twittix-2] => (item=eth1)
+2025-05-22 10:32:16,563 p=554689 u=root n=ansible INFO| TASK [firewall : Set NetworkManager zone for eth0 and eth1 (internal)] *****************************************************************************************************************************************************
+2025-05-22 10:32:16,938 p=554689 u=root n=ansible INFO| ok: [twittix-2] => (item=eth0)
+2025-05-22 10:32:17,297 p=554689 u=root n=ansible INFO| ok: [twittix-2] => (item=eth1)
+2025-05-22 10:32:17,302 p=554689 u=root n=ansible INFO| TASK [firewall : Open port 22/tcp in firewalld (zone internal)] ************************************************************************************************************************************************************
+2025-05-22 10:32:17,695 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:32:17,699 p=554689 u=root n=ansible INFO| TASK [firewall : Open port 7946/tcp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 10:32:18,107 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:32:18,111 p=554689 u=root n=ansible INFO| TASK [firewall : Open port 4789/udp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 10:32:18,506 p=554689 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 10:32:18,511 p=554689 u=root n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************************************************************
+2025-05-22 10:32:18,511 p=554689 u=root n=ansible INFO| twittix-1                  : ok=30   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-22 10:32:18,511 p=554689 u=root n=ansible INFO| twittix-2                  : ok=19   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-22 11:55:07,371 p=568095 u=root n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2025-05-22 11:55:07,501 p=568095 u=root n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option `result_format=yaml` in callback plugin ansible.builtin.default from ansible-core 2.13 onwards. This 
+feature will be removed from community.general in version 13.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2025-05-22 11:55:07,512 p=568095 u=root n=ansible INFO| PLAY [rhel-dockers] ********************************************************************************************************************************************************************************************************
+2025-05-22 11:55:07,519 p=568095 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 11:55:08,561 p=568095 u=root n=ansible INFO| fatal: [twittix-1]: UNREACHABLE! => changed=false 
+  msg: 'Failed to connect to the host via ssh: ssh: connect to host 192.168.5.1 port 22: Connection refused'
+  unreachable: true
+2025-05-22 11:55:08,561 p=568095 u=root n=ansible INFO| fatal: [twittix-2]: UNREACHABLE! => changed=false 
+  msg: 'Failed to connect to the host via ssh: ssh: connect to host 192.168.5.2 port 22: Connection refused'
+  unreachable: true
+2025-05-22 11:55:08,562 p=568095 u=root n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************************************************************
+2025-05-22 11:55:08,562 p=568095 u=root n=ansible INFO| twittix-1                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-22 11:55:08,562 p=568095 u=root n=ansible INFO| twittix-2                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-22 11:55:10,259 p=568152 u=root n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2025-05-22 11:55:10,388 p=568152 u=root n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option `result_format=yaml` in callback plugin ansible.builtin.default from ansible-core 2.13 onwards. This 
+feature will be removed from community.general in version 13.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2025-05-22 11:55:10,400 p=568152 u=root n=ansible INFO| PLAY [rhel-dockers] ********************************************************************************************************************************************************************************************************
+2025-05-22 11:55:10,407 p=568152 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 11:55:10,564 p=568152 u=root n=ansible INFO| fatal: [twittix-2]: UNREACHABLE! => changed=false 
+  msg: |-
+    Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+    Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+    It is also possible that a host key has just been changed.
+    The fingerprint for the ED25519 key sent by the remote host is
+    SHA256:ikgGjFp9dkC/5mTVLcnp6xPrOg9yxjaXkHB3AFuWyF4.
+    Please contact your system administrator.
+    Add correct host key in /root/.ssh/known_hosts to get rid of this message.
+    Offending ED25519 key in /root/.ssh/known_hosts:4
+      remove with:
+      ssh-keygen -f "/root/.ssh/known_hosts" -R "192.168.5.2"
+    UpdateHostkeys is disabled because the host key is not trusted.
+    "System is booting up. Unprivileged users are not permitted to log in yet. Please come back later. For technical details, see pam_nologin(8)."
+    Connection closed by 192.168.5.2 port 22
+  unreachable: true
+2025-05-22 11:55:11,813 p=568152 u=root n=ansible WARNING| [WARNING]: Platform linux on host twittix-1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-22 11:55:11,813 p=568152 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 11:55:11,817 p=568152 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Upgrade all packages] ***********************************************************************************************************************************************************************
+2025-05-22 11:55:14,078 p=568152 u=root n=ansible ERROR|  [ERROR]: User interrupted execution
+
+2025-05-22 11:55:15,154 p=568224 u=root n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2025-05-22 11:55:15,243 p=568224 u=root n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option `result_format=yaml` in callback plugin ansible.builtin.default from ansible-core 2.13 onwards. This 
+feature will be removed from community.general in version 13.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2025-05-22 11:55:15,253 p=568224 u=root n=ansible INFO| PLAY [rhel-dockers] ********************************************************************************************************************************************************************************************************
+2025-05-22 11:55:15,259 p=568224 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 11:55:16,255 p=568224 u=root n=ansible WARNING| [WARNING]: Platform linux on host twittix-1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-22 11:55:16,255 p=568224 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 11:55:16,427 p=568224 u=root n=ansible WARNING| [WARNING]: Platform linux on host twittix-2 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-22 11:55:16,427 p=568224 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 11:55:16,431 p=568224 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Upgrade all packages] ***********************************************************************************************************************************************************************
+2025-05-22 11:58:10,114 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:58:13,996 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:58:14,000 p=568224 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Install epel-release] ***********************************************************************************************************************************************************************
+2025-05-22 11:58:15,758 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:58:15,768 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:58:15,772 p=568224 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Install required packages] ******************************************************************************************************************************************************************
+2025-05-22 11:58:35,877 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:58:42,288 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:58:42,293 p=568224 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Remove unused packages] *********************************************************************************************************************************************************************
+2025-05-22 11:58:43,877 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:58:43,940 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:58:43,949 p=568224 u=root n=ansible INFO| TASK [../../roles/install-docker-rhel : Add Docker CE repo] ****************************************************************************************************************************************************************
+2025-05-22 11:58:44,464 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:58:44,479 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:58:44,485 p=568224 u=root n=ansible INFO| TASK [../../roles/install-docker-rhel : Remove obsolete Docker packages] ***************************************************************************************************************************************************
+2025-05-22 11:58:45,915 p=568224 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 11:58:45,932 p=568224 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 11:58:45,936 p=568224 u=root n=ansible INFO| TASK [../../roles/install-docker-rhel : Install Docker engine] *************************************************************************************************************************************************************
+2025-05-22 11:59:19,300 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:59:20,686 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:20,700 p=568224 u=root n=ansible INFO| RUNNING HANDLER [../../roles/install-docker-rhel : start docker] ***********************************************************************************************************************************************************
+2025-05-22 11:59:22,060 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:59:22,069 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:22,071 p=568224 u=root n=ansible INFO| PLAY [Init Swarm master] ***************************************************************************************************************************************************************************************************
+2025-05-22 11:59:22,075 p=568224 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 11:59:22,818 p=568224 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 11:59:22,821 p=568224 u=root n=ansible INFO| TASK [include_tasks] *******************************************************************************************************************************************************************************************************
+2025-05-22 11:59:22,833 p=568224 u=root n=ansible INFO| included: /opt/twittix-infrastructure/preprod/ansible/roles/install-docker-deb/tasks/init-swarm.yml for twittix-1
+2025-05-22 11:59:22,836 p=568224 u=root n=ansible INFO| TASK [Init Swarm master] ***************************************************************************************************************************************************************************************************
+2025-05-22 11:59:23,328 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:23,335 p=568224 u=root n=ansible INFO| TASK [Récupérer le token de join pour les workers] *************************************************************************************************************************************************************************
+2025-05-22 11:59:23,685 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:23,689 p=568224 u=root n=ansible INFO| TASK [Sauvegarder l'IP du master] ******************************************************************************************************************************************************************************************
+2025-05-22 11:59:23,699 p=568224 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 11:59:23,702 p=568224 u=root n=ansible INFO| TASK [Stocker le token pour tous les hôtes] ********************************************************************************************************************************************************************************
+2025-05-22 11:59:23,713 p=568224 u=root n=ansible INFO| ok: [twittix-1 -> localhost]
+2025-05-22 11:59:23,714 p=568224 u=root n=ansible INFO| PLAY [Join Swarm workers to cluster] ***************************************************************************************************************************************************************************************
+2025-05-22 11:59:23,718 p=568224 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 11:59:24,452 p=568224 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 11:59:24,455 p=568224 u=root n=ansible INFO| TASK [include_tasks] *******************************************************************************************************************************************************************************************************
+2025-05-22 11:59:24,465 p=568224 u=root n=ansible INFO| included: /opt/twittix-infrastructure/preprod/ansible/roles/install-docker-deb/tasks/join-cluster.yml for twittix-2
+2025-05-22 11:59:24,468 p=568224 u=root n=ansible INFO| TASK [Joindre le Swarm] ****************************************************************************************************************************************************************************************************
+2025-05-22 11:59:24,829 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:59:24,831 p=568224 u=root n=ansible INFO| PLAY [Install firewalld] ***************************************************************************************************************************************************************************************************
+2025-05-22 11:59:24,835 p=568224 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 11:59:25,639 p=568224 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 11:59:25,684 p=568224 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 11:59:25,688 p=568224 u=root n=ansible INFO| TASK [firewall : Install firewalld] ****************************************************************************************************************************************************************************************
+2025-05-22 11:59:28,838 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:59:29,009 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:29,024 p=568224 u=root n=ansible INFO| RUNNING HANDLER [firewall : start firewalld] *******************************************************************************************************************************************************************************
+2025-05-22 11:59:29,663 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:59:29,679 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:29,681 p=568224 u=root n=ansible INFO| PLAY [Configure Firewall on Docker Swarm Master] ***************************************************************************************************************************************************************************
+2025-05-22 11:59:29,689 p=568224 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 11:59:30,496 p=568224 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 11:59:30,499 p=568224 u=root n=ansible INFO| TASK [firewall : Set interface eth0 to dmz zone] ***************************************************************************************************************************************************************************
+2025-05-22 11:59:31,019 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:31,023 p=568224 u=root n=ansible INFO| TASK [firewall : Set eth1 and eth2 to internal zone] ***********************************************************************************************************************************************************************
+2025-05-22 11:59:31,438 p=568224 u=root n=ansible INFO| changed: [twittix-1] => (item=eth1)
+2025-05-22 11:59:31,841 p=568224 u=root n=ansible INFO| changed: [twittix-1] => (item=eth2)
+2025-05-22 11:59:31,846 p=568224 u=root n=ansible INFO| TASK [firewall : Set NetworkManager zone for eth0 (dmz)] *******************************************************************************************************************************************************************
+2025-05-22 11:59:32,338 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:32,342 p=568224 u=root n=ansible INFO| TASK [firewall : Set NetworkManager zone for eth1 and eth2 (internal)] *****************************************************************************************************************************************************
+2025-05-22 11:59:32,735 p=568224 u=root n=ansible INFO| changed: [twittix-1] => (item=eth1)
+2025-05-22 11:59:33,122 p=568224 u=root n=ansible INFO| changed: [twittix-1] => (item=eth2)
+2025-05-22 11:59:33,126 p=568224 u=root n=ansible INFO| TASK [firewall : Open port 22/tcp in firewalld (zone dmz)] *****************************************************************************************************************************************************************
+2025-05-22 11:59:33,559 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:33,563 p=568224 u=root n=ansible INFO| TASK [firewall : Open port 80/tcp in firewalld (zone dmz)] *****************************************************************************************************************************************************************
+2025-05-22 11:59:33,986 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:33,992 p=568224 u=root n=ansible INFO| TASK [firewall : Open port 443/tcp in firewalld (zone dmz)] ****************************************************************************************************************************************************************
+2025-05-22 11:59:34,419 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:34,423 p=568224 u=root n=ansible INFO| TASK [firewall : Open port 8080/tcp in firewalld (zone dmz)] ***************************************************************************************************************************************************************
+2025-05-22 11:59:34,858 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:34,862 p=568224 u=root n=ansible INFO| TASK [firewall : Open port 8000/tcp in firewalld (zone dmz)] ***************************************************************************************************************************************************************
+2025-05-22 11:59:35,281 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:35,285 p=568224 u=root n=ansible INFO| TASK [firewall : Open port 5173/tcp in firewalld (zone dmz)] ***************************************************************************************************************************************************************
+2025-05-22 11:59:35,716 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:35,720 p=568224 u=root n=ansible INFO| TASK [firewall : Open port 2377/tcp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 11:59:36,161 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:36,165 p=568224 u=root n=ansible INFO| TASK [firewall : Open port 7946/tcp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 11:59:36,585 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:36,589 p=568224 u=root n=ansible INFO| TASK [firewall : Open port 4789/udp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 11:59:37,012 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:37,022 p=568224 u=root n=ansible INFO| RUNNING HANDLER [firewall : restart firewalld] *****************************************************************************************************************************************************************************
+2025-05-22 11:59:37,637 p=568224 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 11:59:37,639 p=568224 u=root n=ansible INFO| PLAY [Configure Firewall on Docker Swarm Workers] **************************************************************************************************************************************************************************
+2025-05-22 11:59:37,643 p=568224 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 11:59:38,411 p=568224 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 11:59:38,414 p=568224 u=root n=ansible INFO| TASK [firewall : Set eth0 and eth1 to internal zone] ***********************************************************************************************************************************************************************
+2025-05-22 11:59:38,838 p=568224 u=root n=ansible INFO| changed: [twittix-2] => (item=eth0)
+2025-05-22 11:59:39,243 p=568224 u=root n=ansible INFO| changed: [twittix-2] => (item=eth1)
+2025-05-22 11:59:39,248 p=568224 u=root n=ansible INFO| TASK [firewall : Set NetworkManager zone for eth0 and eth1 (internal)] *****************************************************************************************************************************************************
+2025-05-22 11:59:39,646 p=568224 u=root n=ansible INFO| changed: [twittix-2] => (item=eth0)
+2025-05-22 11:59:40,054 p=568224 u=root n=ansible INFO| changed: [twittix-2] => (item=eth1)
+2025-05-22 11:59:40,059 p=568224 u=root n=ansible INFO| TASK [firewall : Open port 22/tcp in firewalld (zone internal)] ************************************************************************************************************************************************************
+2025-05-22 11:59:40,500 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:59:40,504 p=568224 u=root n=ansible INFO| TASK [firewall : Open port 7946/tcp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 11:59:40,947 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:59:40,951 p=568224 u=root n=ansible INFO| TASK [firewall : Open port 4789/udp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 11:59:41,387 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:59:41,396 p=568224 u=root n=ansible INFO| RUNNING HANDLER [firewall : restart firewalld] *****************************************************************************************************************************************************************************
+2025-05-22 11:59:41,986 p=568224 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 11:59:41,987 p=568224 u=root n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************************************************************
+2025-05-22 11:59:41,987 p=568224 u=root n=ansible INFO| twittix-1                  : ok=33   changed=25   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-22 11:59:41,987 p=568224 u=root n=ansible INFO| twittix-2                  : ok=22   changed=16   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-22 12:46:41,611 p=578222 u=root n=ansible WARNING| [WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see details
+
+2025-05-22 12:46:41,700 p=578222 u=root n=ansible INFO| [DEPRECATION WARNING]: community.general.yaml has been deprecated. The plugin has been superseded by the the option `result_format=yaml` in callback plugin ansible.builtin.default from ansible-core 2.13 onwards. This 
+feature will be removed from community.general in version 13.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2025-05-22 12:46:41,710 p=578222 u=root n=ansible INFO| PLAY [rhel-dockers] ********************************************************************************************************************************************************************************************************
+2025-05-22 12:46:41,716 p=578222 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 12:46:43,096 p=578222 u=root n=ansible WARNING| [WARNING]: Platform linux on host twittix-2 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-22 12:46:43,096 p=578222 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 12:46:43,109 p=578222 u=root n=ansible WARNING| [WARNING]: Platform linux on host twittix-1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-05-22 12:46:43,109 p=578222 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 12:46:43,113 p=578222 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Upgrade all packages] ***********************************************************************************************************************************************************************
+2025-05-22 12:49:40,709 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:49:42,112 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:49:42,118 p=578222 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Install epel-release] ***********************************************************************************************************************************************************************
+2025-05-22 12:49:43,953 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:49:43,961 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:49:43,965 p=578222 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Install required packages] ******************************************************************************************************************************************************************
+2025-05-22 12:50:03,859 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:50:04,748 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:04,753 p=578222 u=root n=ansible INFO| TASK [../../roles/rhel-setup : Remove unused packages] *********************************************************************************************************************************************************************
+2025-05-22 12:50:06,386 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:06,392 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:50:06,403 p=578222 u=root n=ansible INFO| TASK [../../roles/install-docker-rhel : Add Docker CE repo] ****************************************************************************************************************************************************************
+2025-05-22 12:50:06,965 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:50:06,980 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:06,984 p=578222 u=root n=ansible INFO| TASK [../../roles/install-docker-rhel : Remove obsolete Docker packages] ***************************************************************************************************************************************************
+2025-05-22 12:50:08,512 p=578222 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 12:50:08,551 p=578222 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 12:50:08,555 p=578222 u=root n=ansible INFO| TASK [../../roles/install-docker-rhel : Install Docker engine] *************************************************************************************************************************************************************
+2025-05-22 12:50:42,341 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:43,397 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:50:43,410 p=578222 u=root n=ansible INFO| RUNNING HANDLER [../../roles/install-docker-rhel : start docker] ***********************************************************************************************************************************************************
+2025-05-22 12:50:44,796 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:44,812 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:50:44,814 p=578222 u=root n=ansible INFO| PLAY [Init Swarm master] ***************************************************************************************************************************************************************************************************
+2025-05-22 12:50:44,817 p=578222 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 12:50:45,590 p=578222 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 12:50:45,593 p=578222 u=root n=ansible INFO| TASK [include_tasks] *******************************************************************************************************************************************************************************************************
+2025-05-22 12:50:45,605 p=578222 u=root n=ansible INFO| included: /opt/twittix-infrastructure/preprod/ansible/roles/install-docker-deb/tasks/init-swarm.yml for twittix-1
+2025-05-22 12:50:45,608 p=578222 u=root n=ansible INFO| TASK [Init Swarm master] ***************************************************************************************************************************************************************************************************
+2025-05-22 12:50:46,905 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:46,909 p=578222 u=root n=ansible INFO| TASK [Récupérer le token de join pour les workers] *************************************************************************************************************************************************************************
+2025-05-22 12:50:47,292 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:47,295 p=578222 u=root n=ansible INFO| TASK [Sauvegarder l'IP du master] ******************************************************************************************************************************************************************************************
+2025-05-22 12:50:47,306 p=578222 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 12:50:47,310 p=578222 u=root n=ansible INFO| TASK [Stocker le token pour tous les hôtes] ********************************************************************************************************************************************************************************
+2025-05-22 12:50:47,320 p=578222 u=root n=ansible INFO| ok: [twittix-1 -> localhost]
+2025-05-22 12:50:47,322 p=578222 u=root n=ansible INFO| PLAY [Join Swarm workers to cluster] ***************************************************************************************************************************************************************************************
+2025-05-22 12:50:47,326 p=578222 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 12:50:48,059 p=578222 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 12:50:48,062 p=578222 u=root n=ansible INFO| TASK [include_tasks] *******************************************************************************************************************************************************************************************************
+2025-05-22 12:50:48,072 p=578222 u=root n=ansible INFO| included: /opt/twittix-infrastructure/preprod/ansible/roles/install-docker-deb/tasks/join-cluster.yml for twittix-2
+2025-05-22 12:50:48,075 p=578222 u=root n=ansible INFO| TASK [Joindre le Swarm] ****************************************************************************************************************************************************************************************************
+2025-05-22 12:50:48,504 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:50:48,506 p=578222 u=root n=ansible INFO| PLAY [Install firewalld] ***************************************************************************************************************************************************************************************************
+2025-05-22 12:50:48,509 p=578222 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 12:50:49,308 p=578222 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 12:50:49,346 p=578222 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 12:50:49,350 p=578222 u=root n=ansible INFO| TASK [firewall : Install firewalld] ****************************************************************************************************************************************************************************************
+2025-05-22 12:50:52,479 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:50:52,556 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:52,572 p=578222 u=root n=ansible INFO| RUNNING HANDLER [firewall : start firewalld] *******************************************************************************************************************************************************************************
+2025-05-22 12:50:53,216 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:53,260 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:50:53,262 p=578222 u=root n=ansible INFO| PLAY [Configure Firewall on Docker Swarm Master] ***************************************************************************************************************************************************************************
+2025-05-22 12:50:53,270 p=578222 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 12:50:54,195 p=578222 u=root n=ansible INFO| ok: [twittix-1]
+2025-05-22 12:50:54,198 p=578222 u=root n=ansible INFO| TASK [firewall : Set interface eth0 to dmz zone] ***************************************************************************************************************************************************************************
+2025-05-22 12:50:54,719 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:54,723 p=578222 u=root n=ansible INFO| TASK [firewall : Set eth1 and eth2 to internal zone] ***********************************************************************************************************************************************************************
+2025-05-22 12:50:55,145 p=578222 u=root n=ansible INFO| changed: [twittix-1] => (item=eth1)
+2025-05-22 12:50:55,566 p=578222 u=root n=ansible INFO| changed: [twittix-1] => (item=eth2)
+2025-05-22 12:50:55,571 p=578222 u=root n=ansible INFO| TASK [firewall : Set NetworkManager zone for eth0 (dmz)] *******************************************************************************************************************************************************************
+2025-05-22 12:50:56,057 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:56,061 p=578222 u=root n=ansible INFO| TASK [firewall : Set NetworkManager zone for eth1 and eth2 (internal)] *****************************************************************************************************************************************************
+2025-05-22 12:50:56,465 p=578222 u=root n=ansible INFO| changed: [twittix-1] => (item=eth1)
+2025-05-22 12:50:56,860 p=578222 u=root n=ansible INFO| changed: [twittix-1] => (item=eth2)
+2025-05-22 12:50:56,865 p=578222 u=root n=ansible INFO| TASK [firewall : Open port 22/tcp in firewalld (zone dmz)] *****************************************************************************************************************************************************************
+2025-05-22 12:50:57,303 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:57,307 p=578222 u=root n=ansible INFO| TASK [firewall : Open port 80/tcp in firewalld (zone dmz)] *****************************************************************************************************************************************************************
+2025-05-22 12:50:57,739 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:57,745 p=578222 u=root n=ansible INFO| TASK [firewall : Open port 443/tcp in firewalld (zone dmz)] ****************************************************************************************************************************************************************
+2025-05-22 12:50:58,180 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:58,184 p=578222 u=root n=ansible INFO| TASK [firewall : Open port 8080/tcp in firewalld (zone dmz)] ***************************************************************************************************************************************************************
+2025-05-22 12:50:58,621 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:58,626 p=578222 u=root n=ansible INFO| TASK [firewall : Open port 8000/tcp in firewalld (zone dmz)] ***************************************************************************************************************************************************************
+2025-05-22 12:50:59,047 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:59,051 p=578222 u=root n=ansible INFO| TASK [firewall : Open port 5173/tcp in firewalld (zone dmz)] ***************************************************************************************************************************************************************
+2025-05-22 12:50:59,481 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:59,486 p=578222 u=root n=ansible INFO| TASK [firewall : Open port 2377/tcp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 12:50:59,926 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:50:59,930 p=578222 u=root n=ansible INFO| TASK [firewall : Open port 7946/tcp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 12:51:00,359 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:51:00,363 p=578222 u=root n=ansible INFO| TASK [firewall : Open port 4789/udp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 12:51:00,788 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:51:00,798 p=578222 u=root n=ansible INFO| RUNNING HANDLER [firewall : restart firewalld] *****************************************************************************************************************************************************************************
+2025-05-22 12:51:01,403 p=578222 u=root n=ansible INFO| changed: [twittix-1]
+2025-05-22 12:51:01,405 p=578222 u=root n=ansible INFO| PLAY [Configure Firewall on Docker Swarm Workers] **************************************************************************************************************************************************************************
+2025-05-22 12:51:01,409 p=578222 u=root n=ansible INFO| TASK [Gathering Facts] *****************************************************************************************************************************************************************************************************
+2025-05-22 12:51:02,176 p=578222 u=root n=ansible INFO| ok: [twittix-2]
+2025-05-22 12:51:02,179 p=578222 u=root n=ansible INFO| TASK [firewall : Set eth0 and eth1 to internal zone] ***********************************************************************************************************************************************************************
+2025-05-22 12:51:02,613 p=578222 u=root n=ansible INFO| changed: [twittix-2] => (item=eth0)
+2025-05-22 12:51:03,020 p=578222 u=root n=ansible INFO| changed: [twittix-2] => (item=eth1)
+2025-05-22 12:51:03,026 p=578222 u=root n=ansible INFO| TASK [firewall : Set NetworkManager zone for eth0 and eth1 (internal)] *****************************************************************************************************************************************************
+2025-05-22 12:51:03,439 p=578222 u=root n=ansible INFO| changed: [twittix-2] => (item=eth0)
+2025-05-22 12:51:03,823 p=578222 u=root n=ansible INFO| changed: [twittix-2] => (item=eth1)
+2025-05-22 12:51:03,828 p=578222 u=root n=ansible INFO| TASK [firewall : Open port 22/tcp in firewalld (zone internal)] ************************************************************************************************************************************************************
+2025-05-22 12:51:04,254 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:51:04,258 p=578222 u=root n=ansible INFO| TASK [firewall : Open port 7946/tcp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 12:51:04,692 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:51:04,697 p=578222 u=root n=ansible INFO| TASK [firewall : Open port 4789/udp in firewalld (zone internal)] **********************************************************************************************************************************************************
+2025-05-22 12:51:05,122 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:51:05,131 p=578222 u=root n=ansible INFO| RUNNING HANDLER [firewall : restart firewalld] *****************************************************************************************************************************************************************************
+2025-05-22 12:51:05,717 p=578222 u=root n=ansible INFO| changed: [twittix-2]
+2025-05-22 12:51:05,718 p=578222 u=root n=ansible INFO| PLAY RECAP *****************************************************************************************************************************************************************************************************************
+2025-05-22 12:51:05,718 p=578222 u=root n=ansible INFO| twittix-1                  : ok=33   changed=25   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-22 12:51:05,718 p=578222 u=root n=ansible INFO| twittix-2                  : ok=22   changed=16   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
