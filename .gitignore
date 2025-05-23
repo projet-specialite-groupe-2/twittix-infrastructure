@@ -10,7 +10,7 @@
 
 # Ignore variables files
 *.auto.tfvars
-/prod-gcp/terraform/terraform.tfvars
+prod-gcp/terraform/terraform.tfvars
 
 # Ignore override files
 *.tfoverride
@@ -26,4 +26,4 @@ terraform.rc
 ##        Git Ignore statements for Ansible       ##
 ####################################################
 
-.venv/!/prod-gcp/terraform/terraform.tfvars
+.venv/
