@@ -21,3 +21,16 @@ variable "zone" {
   type        = string
   default     = "europe-west1-b"
 }
+
+variable "db_name1" {
+  type        = string
+  description = "Nom de la base de données PostgreSQL"
+}
+variable "db_password1" {
+  type        = string
+  description = "Mot de passe PostgreSQL"
+}
+variable "db_user1" {
+  type        = string
+  description = "Nom d'utilisateur PostgreSQL"
+}
