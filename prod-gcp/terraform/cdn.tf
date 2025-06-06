@@ -11,5 +11,5 @@ module "cdn_static_assets" {
 
   compute_backend_bucket_name        = "twittix-backend"
   compute_backend_bucket_description = "Backend Bucket for Twittix with CDN"
-  storage_bucket_name                = "twittix"
+  storage_bucket_name                = module.bucket_static_assets.bucket_name
 }

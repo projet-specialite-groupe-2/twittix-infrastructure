@@ -12,5 +12,5 @@ resource "google_artifact_registry_repository_iam_member" "writer" {
   location   = var.region
   project    = var.project_id
   role       = "roles/artifactregistry.writer"
-  member     = "serviceAccount:${var.cloud_build_sa}"
+  member     = var.cloud_build_sa
 }

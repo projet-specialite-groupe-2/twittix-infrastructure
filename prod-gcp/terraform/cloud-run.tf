@@ -14,11 +14,11 @@ module "cloud_run_auth_api" {
   container_port      = 8080
   region              = var.region
   project_id          = var.project_id
-  service_account_email = var.cloud_run_sa_email
+  service_account_email = google_service_account.cloud_run_service_account.email
 
 
   vpc_connector     = module.vpc.vpc_connector_self_link
-  egress_setting    = "ALL_TRAFFIC"
+  egress_setting    = "all"
   invoker_members   = ["allUsers"]
 }
 
@@ -37,9 +37,9 @@ module "cloud_run_backend_api" {
   container_port      = 8081
   region              = var.region
   project_id          = var.project_id
-  service_account_email = var.cloud_run_sa_email
+  service_account_email = google_service_account.cloud_run_service_account.email
   vpc_connector     = module.vpc.vpc_connector_self_link
-  egress_setting    = "ALL_TRAFFIC"
+  egress_setting    = "all"
   invoker_members   = ["allUsers"]
 
 }
@@ -59,10 +59,10 @@ module "cloud_run_reco_api" {
   container_port      = 8082
   region              = var.region
   project_id          = var.project_id
-  service_account_email = var.cloud_run_sa_email
+  service_account_email = google_service_account.cloud_run_service_account.email
 
   vpc_connector     = module.vpc.vpc_connector_self_link
-  egress_setting    = "ALL_TRAFFIC"
+  egress_setting    = "all"
   invoker_members   = ["allUsers"]
 }
 
@@ -81,11 +81,11 @@ module "cloud_run_front_user" {
   container_port      = 80
   region              = var.region
   project_id          = var.project_id
-  service_account_email = var.cloud_run_sa_email
+  service_account_email = google_service_account.cloud_run_service_account.email
 
   secrets = []
   vpc_connector     = module.vpc.vpc_connector_self_link
-  egress_setting    = "ALL_TRAFFIC"
+  egress_setting    = "all"
   invoker_members   = ["allUsers"]
 }
 

@@ -13,14 +13,15 @@ resource "google_monitoring_alert_policy" "cpu_alert" {
   conditions {
     display_name = "CPU over 80%"
     condition_threshold {
-      filter          = "metric.type=\"run.googleapis.com/container/cpu/utilizations\""
+      # Ajout de resource.type pour Cloud Run
+      filter          = "resource.type=\"cloud_run_revision\" AND metric.type=\"run.googleapis.com/container/cpu/utilizations\""
       duration        = "60s"
       comparison      = "COMPARISON_GT"
       threshold_value = 0.8
 
       aggregations {
         alignment_period   = "60s"
-        per_series_aligner = "ALIGN_MEAN"
+        per_series_aligner = "ALIGN_PERCENTILE_95"
       }
     }
   }
@@ -36,14 +37,15 @@ resource "google_monitoring_alert_policy" "ram_alert" {
   conditions {
     display_name = "RAM over 80%"
     condition_threshold {
-      filter          = "metric.type=\"run.googleapis.com/container/memory/utilizations\""
+      # Ajout de resource.type pour Cloud Run
+      filter          = "resource.type=\"cloud_run_revision\" AND metric.type=\"run.googleapis.com/container/memory/utilizations\""
       duration        = "60s"
       comparison      = "COMPARISON_GT"
       threshold_value = 0.8
 
       aggregations {
         alignment_period   = "60s"
-        per_series_aligner = "ALIGN_MEAN"
+        per_series_aligner = "ALIGN_PERCENTILE_95"
       }
     }
   }
@@ -59,7 +61,8 @@ resource "google_monitoring_alert_policy" "sql_storage_alert" {
   conditions {
     display_name = "Cloud SQL disk usage > 8Go"
     condition_threshold {
-      filter          = "metric.type=\"cloudsql.googleapis.com/database/disk/bytes_used\""
+      # Ajout de resource.type pour Cloud SQL
+      filter          = "resource.type=\"cloudsql_database\" AND metric.type=\"cloudsql.googleapis.com/database/disk/bytes_used\""
       duration        = "60s"
       comparison      = "COMPARISON_GT"
       threshold_value = 8589934592 # 8 Go en bytes
@@ -83,7 +86,8 @@ resource "google_monitoring_alert_policy" "redis_memory_alert" {
   conditions {
     display_name = "Redis memory over 80%"
     condition_threshold {
-      filter          = "metric.type=\"redis.googleapis.com/stats/memory/usage_ratio\""
+      # Ajout de resource.type pour Memorystore (Redis)
+      filter          = "resource.type=\"redis_instance\" AND metric.type=\"redis.googleapis.com/stats/memory/usage_ratio\""
       duration        = "60s"
       comparison      = "COMPARISON_GT"
       threshold_value = 0.8
