@@ -21,6 +21,7 @@ resource "google_sql_database_instance" "main" {
       private_network = var.private_network
     }
   }
+  deletion_protection = false
 
 }
 
