@@ -3,8 +3,9 @@ resource "google_secret_manager_secret" "secrets" {
 
   secret_id = each.key
   replication {
-    automatic = true
+    auto {}
   }
+
 }
 
 resource "google_secret_manager_secret_version" "secrets_version" {

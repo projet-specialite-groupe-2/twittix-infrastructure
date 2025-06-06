@@ -5,6 +5,14 @@ resource "google_cloud_run_service" "default" {
   project  = var.project_id             # ID du projet GCP
 
   template {
+    metadata {
+      annotations = {
+        # Vérifie si vpc_connector est défini avant d'ajouter l'annotation
+        "run.googleapis.com/vpc-access-connector" = var.vpc_connector != null ? var.vpc_connector : null
+        # Vérifie si egress_setting est défini avant d'ajouter l'annotation
+        "run.googleapis.com/vpc-access-egress"    = var.egress_setting != null ? var.egress_setting : null
+      }
+    }
     spec {
       service_account_name = var.service_account_email  # Service Account utilisé pour s'authentifier (ex: accès secrets, Cloud SQL...)
 
@@ -30,15 +38,6 @@ resource "google_cloud_run_service" "default" {
           container_port = var.container_port  # Généralement 8080 par défaut
         }
       }
-
-      # Accès au VPC pour permettre l'accès à SQL, Redis, etc.
-      dynamic "vpc_access" {
-        for_each = var.vpc_connector != null ? [1] : []
-        content {
-          connector = var.vpc_connector   # Nom complet du VPC connector (ex: projects/xxx/locations/xxx/connectors/my-connector)
-          egress    = var.egress_setting  # Contrôle le type de trafic sortant (ALL_TRAFFIC ou PRIVATE_RANGES_ONLY)
-        }
-      }
     }
   }
 
@@ -61,6 +60,15 @@ resource "google_cloud_run_service_iam_member" "invoker" {
 
 # Déclencheur Cloud Build pour lancer automatiquement un build (via cloudbuild.yaml) à chaque commit/push
 resource "google_cloudbuild_trigger" "cloudrun_build" {
-  name     = var.build_name    # Nom du déclencheur
-  filename = var.filename      # Fichier YAML de build (ex: cloudbuild.yaml)
+  name     = var.build_name
+  filename = var.filename
+
+  github {
+    owner = "projet-specialite-groupe-2"
+    name  = var.repo_name
+
+    push {
+      branch = "^prod$"
+    }
+  }
 }

@@ -34,3 +34,19 @@ variable "db_user1" {
   type        = string
   description = "Nom d'utilisateur PostgreSQL"
 }
+
+variable "cloud_run_sa_email" {
+  description = "Adresse email de la service account utilisée par les services Cloud Run"
+  type        = string
+}
+
+variable "image_tag" {
+  description = "Tag de l'image Docker à déployer (ex: latest, v1.2.0, sha)"
+  type        = string
+  default     = "latest"
+}
+
+variable "ip_cidr_range1" {
+  description = "IP CIDR si necessaire"
+  type= string
+}

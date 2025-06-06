@@ -3,6 +3,7 @@ resource "google_storage_bucket" "buckets" {
   location      = var.bucket_location
   force_destroy = var.bucket_force_destroy
   storage_class = var.bucket_storage_class
+  project = var.project_id
 
   uniform_bucket_level_access = var.bucket_level_access
 }

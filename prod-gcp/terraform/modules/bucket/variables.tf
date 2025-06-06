@@ -2,6 +2,10 @@ variable "bucket_name" {
   type = string
   description = "Bucket FQDN name"
 }
+variable "project_id" {
+  type = string
+  description = "GCP project ID"
+}
 variable "bucket_location" {
   type = string
   description = "GCS location"

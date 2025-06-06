@@ -62,3 +62,10 @@ variable "filename" {
   type        = string
   description = "Nom du fichier cloudbuild.yaml"
 }
+
+variable "repo_name" {
+  type        = string
+  description = "Nom du repo git"
+}
+
+
