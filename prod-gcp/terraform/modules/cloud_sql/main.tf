@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 6.19.0"
+    }
+  }
+}
 resource "google_sql_database_instance" "main" {
   name             = var.instance_name
   database_version = var.database_version
@@ -13,6 +21,7 @@ resource "google_sql_database_instance" "main" {
       private_network = var.private_network
     }
   }
+
 }
 
 resource "google_sql_database" "default" {

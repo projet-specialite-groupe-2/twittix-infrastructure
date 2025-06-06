@@ -9,5 +9,11 @@ module "cloud_sql_1" {
   database_password = var.db_password1
   database_user = var.db_user1
   private_network = module.vpc.vpc_self_link
+  providers = {
+    google = google
+  }
+
+  depends_on = [module.vpc.private_vpc_connection]
+
 }
 

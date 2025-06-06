@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 6.19.0"
+    }
+  }
+}
 resource "google_redis_instance" "main" {
   name              = var.redis_name
   tier              = var.redis_tier
@@ -8,4 +16,6 @@ resource "google_redis_instance" "main" {
 
   redis_version     = var.redis_version
   connect_mode      = "PRIVATE_SERVICE_ACCESS"
+
+
 }

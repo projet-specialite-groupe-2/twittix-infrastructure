@@ -7,4 +7,10 @@ module "redis" {
   memory_size_gb = 1
   redis_version  = "REDIS_7_2"
   network            = module.vpc.vpc_self_link
+  providers = {
+    google = google
+  }
+
+  depends_on = [module.vpc.private_vpc_connection]
+
 }
