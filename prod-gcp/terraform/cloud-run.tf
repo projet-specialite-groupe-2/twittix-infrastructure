@@ -8,7 +8,7 @@ module "cloud_run_auth_api" {
   container_image     = "europe-west1-docker.pkg.dev/${var.project_id}/twittix/auth-api:${var.image_tag}"
 
   build_name          = "build-auth-api"
-  filename            = "auth-api/cloudbuild.yaml"
+  filename            = "cloudbuild.yaml"
 
 
   container_port      = 8080
@@ -32,7 +32,7 @@ module "cloud_run_backend_api" {
   container_image     = "europe-west1-docker.pkg.dev/${var.project_id}/twittix/backend-api:${var.image_tag}"
 
   build_name          = "build-backend-api"
-  filename            = "backend-api/cloudbuild.yaml"
+  filename            = "cloudbuild.yaml"
 
   container_port      = 8081
   region              = var.region
@@ -54,7 +54,7 @@ module "cloud_run_reco_api" {
   container_image     = "europe-west1-docker.pkg.dev/${var.project_id}/twittix/reco-api:${var.image_tag}"
 
   build_name          = "build-reco-api"
-  filename            = "reco-api/cloudbuild.yaml"
+  filename            = "cloudbuild.yaml"
 
   container_port      = 8082
   region              = var.region
@@ -76,7 +76,7 @@ module "cloud_run_front_user" {
   container_image     = "europe-west1-docker.pkg.dev/${var.project_id}/twittix/front-user:${var.image_tag}"
 
   build_name          = "build-front-user"
-  filename            = "front-user/cloudbuild.yaml"
+  filename            = "cloudbuild.yaml"
 
   container_port      = 80
   region              = var.region
